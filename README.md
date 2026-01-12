@@ -1,5 +1,5 @@
 # ProgrammeshanasProjekts2026
-Spēle, pielāgota no grāmatas "Mazais princis", Antuāns de Sent-Ekziperī.
+Spēle, iedvesmota no grāmatas "Mazais princis", Antuāns de Sent-Ekziperī.
 
 
 Idejas apraksts (wip):
