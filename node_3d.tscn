@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://6pnpflc3krad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(0.99653625, 1.2724943, 1.5098937)
+
+[sub_resource type="QuadMesh" id="QuadMesh_4xowi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5746646, 0.4009521, -0.3956666)
+
+[node name="TestSubject" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestSubject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004386902, -0.052977562, -0.675043)
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestSubject"]
+mesh = SubResource("QuadMesh_4xowi")
+surface_material_override/0 = SubResource("StandardMaterial3D_a202f")
+
+[node name="what dat" type="Node2D" parent="TestSubject/MeshInstance3D"]
