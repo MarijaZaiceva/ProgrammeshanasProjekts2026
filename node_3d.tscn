@@ -24,6 +24,5 @@ transform = Transform3D(-1, 6.1817246e-08, -6.1817225e-08, 0, 0.70710665, 0.7071
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D"]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-visible = false
 axis = 1
 texture = ExtResource("1_a202f")
