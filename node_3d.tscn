@@ -1,28 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://6pnpflc3krad"]
+[gd_scene load_steps=5 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="1_a202f"]
+[ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://player.gd" id="1_noarx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
-[node name="Node3D" type="CharacterBody3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(85.015144, 1, 37.42285)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Node3D" type="Node3D"]
+
+[node name="Level1" type="Node3D" parent="."]
+
+[node name="Player" type="CharacterBody3D" parent="Level1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
+script = ExtResource("1_noarx")
+
+[node name="Sprite3D" type="Sprite3D" parent="Level1/Player"]
 billboard = 1
 texture = ExtResource("1_a202f")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/Player"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_noarx")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="Level1/Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="Level1/Player/SpringArm3D"]
 transform = Transform3D(-1, 6.1817246e-08, -6.1817225e-08, 0, 0.70710665, 0.7071069, 8.742278e-08, 0.7071069, -0.70710665, 0, 0, 0)
+current = true
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="Level1/Player/SpringArm3D"]
+transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82239234, -4.908226, -1.2507219, 14.21693)
+light_energy = 1.26
 
-[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+[node name="TestingGround" type="StaticBody3D" parent="Level1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/TestingGround"]
+transform = Transform3D(0.92128724, 0, -0.38888276, 0, 1, 0, 0.38888276, 0, 0.92128724, -0.9613733, 0, -0.11134243)
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="Sprite3D" type="Sprite3D" parent="Level1/TestingGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4901161e-08)
+layers = 2
+pixel_size = 0.1
+axis = 1
+texture = ExtResource("1_a202f")
+
+[node name="TestingGround2" type="StaticBody3D" parent="Level1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2348251, 33.600822)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/TestingGround2"]
+transform = Transform3D(0.92128724, 0, -0.38888276, 0, 1, 0, 0.38888276, 0, 0.92128724, -0.9613733, 0, -0.11134243)
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="Sprite3D" type="Sprite3D" parent="Level1/TestingGround2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4901161e-08)
+layers = 3
+pixel_size = 0.1
 axis = 1
 texture = ExtResource("1_a202f")
