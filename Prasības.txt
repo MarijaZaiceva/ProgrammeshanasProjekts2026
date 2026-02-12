@@ -1,0 +1,9 @@
+Funkcionālās prasības
+Lietotājs var saglabāt spēles progresu uz servera
+Lietotājs var cīnīties ar “mobiem” lai izpildītu kvestus
+Lietotāja tēls var kustēties vairākos virzienos
+
+Nefunkcionālās prasības
+uzbrukuma spēks atšķirsies, ja tas būs kritisks
+Varoņa slaidam ir atbilstošas animācijas atkarībā no tā, kurā virzienā viņš iet
+Spēle var ielādēties ātrāk nekā 10 sekundēs
