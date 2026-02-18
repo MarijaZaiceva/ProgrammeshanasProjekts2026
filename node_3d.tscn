@@ -1,12 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://6pnpflc3krad"]
+[gd_scene load_steps=9 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="1_a202f"]
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://player.gd" id="1_noarx"]
+[ext_resource type="Texture2D" uid="uid://bf2pswdip7yth" path="res://Textures/1794621_4c28a.png" id="3_a0tk4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
+[sub_resource type="Gradient" id="Gradient_a0tk4"]
+colors = PackedColorArray(0.12935773, 0.21175227, 0.06761927, 1, 1, 1, 0.6901961, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r3fl7"]
+gradient = SubResource("Gradient_a0tk4")
+width = 1000
+height = 1000
+fill_from = Vector2(0.14252336, 0.1495327)
+fill_to = Vector2(1, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
-size = Vector3(85.015144, 1, 37.42285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
+size = Vector3(4.125122, 5.2231445, 3.211914)
 
 [node name="Node3D" type="Node3D"]
 
@@ -28,7 +41,7 @@ shape = SubResource("CapsuleShape3D_noarx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
 
 [node name="Camera3D" type="Camera3D" parent="Level1/Player/SpringArm3D"]
-transform = Transform3D(-1, 6.1817246e-08, -6.1817225e-08, 0, 0.70710665, 0.7071069, 8.742278e-08, 0.7071069, -0.70710665, 0, 0, 0)
+transform = Transform3D(-1, -5.6194274e-08, 6.696973e-08, 0, 0.76604444, 0.6427876, -8.742278e-08, 0.6427876, -0.76604444, 0, 0, 0)
 current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Level1/Player/SpringArm3D"]
@@ -36,28 +49,28 @@ transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82
 light_energy = 1.26
 
 [node name="TestingGround" type="StaticBody3D" parent="Level1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/TestingGround"]
-transform = Transform3D(0.92128724, 0, -0.38888276, 0, 1, 0, 0.38888276, 0, 0.92128724, -0.9613733, 0, -0.11134243)
-shape = SubResource("BoxShape3D_noarx")
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Level1/TestingGround"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4901161e-08)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -50.750412, 0, 50.171974)
 layers = 2
 pixel_size = 0.1
 axis = 1
-texture = ExtResource("1_a202f")
+texture = SubResource("GradientTexture2D_r3fl7")
 
-[node name="TestingGround2" type="StaticBody3D" parent="Level1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2348251, 33.600822)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/TestingGround2"]
-transform = Transform3D(0.92128724, 0, -0.38888276, 0, 1, 0, 0.38888276, 0, 0.92128724, -0.9613733, 0, -0.11134243)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/TestingGround"]
+transform = Transform3D(512, 0, 0, 0, 1, 0, 0, 0, 512, -256, 0, 256)
 shape = SubResource("BoxShape3D_noarx")
+debug_color = Color(1, 1, 1, 1)
 
-[node name="Sprite3D" type="Sprite3D" parent="Level1/TestingGround2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4901161e-08)
-layers = 3
-pixel_size = 0.1
-axis = 1
-texture = ExtResource("1_a202f")
+[node name="MonsterThing" type="CharacterBody3D" parent="Level1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6174297, 5.1188583, 7.1886272)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/MonsterThing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.562561, 2.1115723, 1.105957)
+shape = SubResource("BoxShape3D_a0tk4")
+
+[node name="Sprite3D" type="Sprite3D" parent="Level1/MonsterThing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19690895, 1.9077363, -0.2567482)
+billboard = 1
+texture = ExtResource("3_a0tk4")

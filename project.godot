@@ -47,6 +47,14 @@ right={
 ]
 }
 
+[input_devices]
+
+sensors/enable_gravity=true
+
+[physics]
+
+3d/default_gravity=13.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

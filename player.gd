@@ -1,11 +1,7 @@
 extends CharacterBody3D
 
-@export_group("Movement")
-@export var move_speed := 10.0
-@export var acceleration := 20.0
-
 const SPEED = 30.0
-const JUMP_VELOCITY = 8
+const JUMP_VELOCITY = 10
 
 
 func _physics_process(delta: float) -> void:
