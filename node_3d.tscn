@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://6pnpflc3krad"]
+[gd_scene load_steps=11 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="1_a202f"]
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://player.gd" id="1_noarx"]
 [ext_resource type="Texture2D" uid="uid://bf2pswdip7yth" path="res://Textures/1794621_4c28a.png" id="3_a0tk4"]
+[ext_resource type="Script" uid="uid://7jux4chn6f55" path="res://monster_thing.gd" id="3_r3fl7"]
+[ext_resource type="Script" uid="uid://c4jxq3jdv64rg" path="res://label.gd" id="5_jka67"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -65,6 +67,7 @@ debug_color = Color(1, 1, 1, 1)
 
 [node name="MonsterThing" type="CharacterBody3D" parent="Level1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.260963, 5.1188583, 33.68065)
+script = ExtResource("3_r3fl7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level1/MonsterThing"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.562561, 2.1115723, 1.105957)
@@ -79,6 +82,7 @@ texture = ExtResource("3_a0tk4")
 offset_right = 347.0
 offset_bottom = 83.0
 text = "Can you read this?"
+script = ExtResource("5_jka67")
 
 [node name="Button" type="Button" parent="Level1/Label"]
 layout_mode = 0
