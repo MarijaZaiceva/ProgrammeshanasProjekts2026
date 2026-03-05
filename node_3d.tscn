@@ -78,7 +78,7 @@ texture = ExtResource("3_a0tk4")
 [node name="Label" type="Label" parent="Level1"]
 offset_right = 347.0
 offset_bottom = 83.0
-text = "Can you read this?"
+text = "Are you blind?"
 
 [node name="Button" type="Button" parent="Level1/Label"]
 layout_mode = 0
