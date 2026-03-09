@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5uhtmtt532gk"]
+
+[ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://player.gd" id="1_eovys"]
+[ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="2_vb825"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_eovys")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("2_vb825")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -10)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(-1, -5.6194274e-08, 6.696973e-08, 0, 0.76604444, 0.6427876, -8.742278e-08, 0.6427876, -0.76604444, 0, 0, 0)
+current = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SpringArm3D"]
+transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82239234, -4.908226, -1.2507219, 14.21693)
+light_energy = 1.26
