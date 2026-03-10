@@ -10,7 +10,7 @@ size = Vector3(4.125122, 5.2231445, 3.211914)
 script = ExtResource("1_th73j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.562561, 2.1115723, 1.105957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20595288, 2.1115723, -0.014888763)
 shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

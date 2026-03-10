@@ -20,6 +20,8 @@ fill_to = Vector2(1, 1)
 
 [node name="Level1" type="Node3D" parent="."]
 
+[node name="MonsterThing" parent="Level1" instance=ExtResource("2_r3fl7")]
+
 [node name="Player" parent="Level1" instance=ExtResource("1_a0tk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
 
@@ -37,10 +39,6 @@ texture = SubResource("GradientTexture2D_r3fl7")
 transform = Transform3D(512, 0, 0, 0, 1, 0, 0, 0, 512, -256, 0, 256)
 shape = SubResource("BoxShape3D_noarx")
 debug_color = Color(1, 1, 1, 1)
-
-[node name="monster_thing" parent="Level1" instance=ExtResource("2_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.260963, 0.40102386, 33.68065)
-script = null
 
 [node name="Label" type="Label" parent="Level1"]
 offset_right = 347.0
