@@ -20,17 +20,17 @@ fill_to = Vector2(1, 1)
 
 [node name="Level1" type="Node3D" parent="."]
 
-[node name="MonsterThing" parent="Level1" instance=ExtResource("2_r3fl7")]
-
 [node name="Player" parent="Level1" instance=ExtResource("1_a0tk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
+
+[node name="MonsterThing" parent="Level1" instance=ExtResource("2_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 1.115118, 58.25673)
 
 [node name="TestingGround" type="StaticBody3D" parent="Level1"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="Level1/TestingGround"]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -50.750412, 0, 50.171974)
-layers = 2
 pixel_size = 0.1
 axis = 1
 texture = SubResource("GradientTexture2D_r3fl7")
