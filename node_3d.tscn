@@ -24,7 +24,7 @@ fill_to = Vector2(1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
 
 [node name="MonsterThing" parent="Level1" instance=ExtResource("2_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 1.115118, 58.25673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 2.3777294, 58.25673)
 
 [node name="TestingGround" type="StaticBody3D" parent="Level1"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
