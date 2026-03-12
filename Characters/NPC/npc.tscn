@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bydxwq0h6g1c0" path="res://Characters/NPC/npc.gd" id="1_gxby5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gjyoh"]
-size = Vector3(4.6590614, 10.502563, 4.9465675)
+size = Vector3(10.880586, 10.502563, 10.316781)
 
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_gxby5")
@@ -15,5 +15,12 @@ billboard = 2
 texture = ExtResource("1_gjyoh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026224136, 5.2442255, -4.1484833e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)
 shape = SubResource("BoxShape3D_gjyoh")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.186138, 0)
+billboard = 1
+text = "Press \"Enter\" to chat"
+font_size = 150
+outline_size = 15
