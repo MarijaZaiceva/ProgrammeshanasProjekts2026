@@ -11,8 +11,8 @@ https://github.com/MarijaZaiceva/ProgrammeshanasProjekts2026/blob/main/Prasibas.
 Dokumentācija (tba):
 
 ░▄▄▄▄░
-▀▀▄██►
-▀▀███►
-░▀███►░█►
+▀▀▄██► 
+▀▀███► 
+░▀███►░█► 
 ▒▄████▀▀
 
