@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://6pnpflc3krad"]
+[gd_scene load_steps=8 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://dcs4mdrtg4w3u" path="res://Enemies/monster_thing.tscn" id="2_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_r3fl7"]
 [ext_resource type="Script" uid="uid://c4jxq3jdv64rg" path="res://label.gd" id="5_jka67"]
 
 [sub_resource type="Gradient" id="Gradient_a0tk4"]
@@ -25,6 +26,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
 
 [node name="MonsterThing" parent="Level1" instance=ExtResource("2_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 2.3777294, 58.25673)
+
+[node name="NPC" parent="Level1" instance=ExtResource("3_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.419731, 0, 48.97629)
 
 [node name="TestingGround" type="StaticBody3D" parent="Level1"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)

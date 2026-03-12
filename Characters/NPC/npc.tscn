@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cblx50h6hqrj"]
+
+[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_gjyoh"]
+[ext_resource type="Script" uid="uid://bydxwq0h6g1c0" path="res://Characters/NPC/npc.gd" id="1_gxby5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjyoh"]
+size = Vector3(4.6590614, 10.502563, 4.9465675)
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_gxby5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3931484, 0)
+billboard = 2
+texture = ExtResource("1_gjyoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026224136, 5.2442255, -4.1484833e-05)
+shape = SubResource("BoxShape3D_gjyoh")

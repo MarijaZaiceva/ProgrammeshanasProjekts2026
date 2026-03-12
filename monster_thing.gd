@@ -54,9 +54,9 @@ func _pick_new_wander_target():
 	var distance = randf_range(0, wander_radius)
 	var offset = Vector3(cos(angle), 0.0 ,sin(angle)) * distance #think of the unit circle
 	
-	wander_target = spawn_position + offset
-	agent.target_position = wander_target
-	wander_timer = randf_range(1.0, 3.0)
+	#wander_target = spawn_position + offset
+	#agent.target_position = wander_target
+	#wwander_timer = randf_range(1.0, 3.0)
 	
 func _wanderin(delta: float):
 	pass
