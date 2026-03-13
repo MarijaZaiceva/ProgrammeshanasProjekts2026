@@ -6,7 +6,6 @@
 
 [node name="PlayerData" type="TextureRect" parent="."]
 process_priority = 1
-visible = false
 offset_left = 393.0
 offset_top = 159.0
 offset_right = 768.0
@@ -15,7 +14,6 @@ texture = ExtResource("1_u78i8")
 expand_mode = 1
 
 [node name="Login" type="Control" parent="PlayerData"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +45,6 @@ offset_bottom = 384.0
 placeholder_text = "not1234!"
 
 [node name="Register" type="Control" parent="PlayerData"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
