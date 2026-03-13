@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_u78i8"]
 
-[node name="OpenGame" type="Node"]
+[node name="OpenGame" type="Node2D"]
 
 [node name="PlayerData" type="TextureRect" parent="."]
 process_priority = 1
@@ -25,7 +25,7 @@ offset_bottom = -477.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Username" type="TextEdit" parent="PlayerData/Login"]
+[node name="Username" type="TextEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
 z_index = 1
 layout_mode = 0
 offset_left = 441.0
@@ -34,7 +34,7 @@ offset_right = 708.0
 offset_bottom = 310.0
 placeholder_text = "Tudasuda2007"
 
-[node name="Password" type="TextEdit" parent="PlayerData/Login"]
+[node name="Password" type="TextEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
 process_priority = 1
 z_index = 1
 layout_mode = 0
@@ -54,7 +54,7 @@ offset_bottom = -278.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NewUsername" type="TextEdit" parent="PlayerData/Register"]
+[node name="NewUsername" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 z_index = 1
 layout_mode = 0
 offset_left = 47.0
@@ -63,7 +63,7 @@ offset_right = 314.0
 offset_bottom = 117.0
 placeholder_text = "Tudasuda2007"
 
-[node name="NewPassword" type="TextEdit" parent="PlayerData/Register"]
+[node name="NewPassword" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
 z_index = 1
 layout_mode = 0
@@ -73,7 +73,7 @@ offset_right = 315.0
 offset_bottom = 187.0
 placeholder_text = "not1234!"
 
-[node name="NewPassword2" type="TextEdit" parent="PlayerData/Register"]
+[node name="NewPassword2" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
 z_index = 1
 layout_mode = 0
