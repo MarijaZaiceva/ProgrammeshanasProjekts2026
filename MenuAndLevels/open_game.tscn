@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://doel5qp1fesx8"]
+
+[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_u78i8"]
+
+[node name="OpenGame" type="Node"]
+
+[node name="PlayerData" type="TextureRect" parent="."]
+process_priority = 1
+visible = false
+offset_left = 393.0
+offset_top = 159.0
+offset_right = 768.0
+offset_bottom = 477.0
+texture = ExtResource("1_u78i8")
+expand_mode = 1
+
+[node name="Login" type="Control" parent="PlayerData"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -393.0
+offset_top = -159.0
+offset_right = -768.0
+offset_bottom = -477.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Username" type="TextEdit" parent="PlayerData/Login"]
+z_index = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 262.0
+offset_right = 708.0
+offset_bottom = 310.0
+placeholder_text = "Tudasuda2007"
+
+[node name="Password" type="TextEdit" parent="PlayerData/Login"]
+process_priority = 1
+z_index = 1
+layout_mode = 0
+offset_left = 441.0
+offset_top = 336.0
+offset_right = 708.0
+offset_bottom = 384.0
+placeholder_text = "not1234!"
+
+[node name="Register" type="Control" parent="PlayerData"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -335.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewUsername" type="TextEdit" parent="PlayerData/Register"]
+z_index = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = 69.0
+offset_right = 314.0
+offset_bottom = 117.0
+placeholder_text = "Tudasuda2007"
+
+[node name="NewPassword" type="TextEdit" parent="PlayerData/Register"]
+process_priority = 1
+z_index = 1
+layout_mode = 0
+offset_left = 48.0
+offset_top = 139.0
+offset_right = 315.0
+offset_bottom = 187.0
+placeholder_text = "not1234!"
+
+[node name="NewPassword2" type="TextEdit" parent="PlayerData/Register"]
+process_priority = 1
+z_index = 1
+layout_mode = 0
+offset_left = 48.0
+offset_top = 212.0
+offset_right = 315.0
+offset_bottom = 260.0
+placeholder_text = "not1234!"
+
+[node name="SwitchMode" type="Button" parent="PlayerData"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 275.0
+offset_right = 343.0
+offset_bottom = 304.0
+text = "Register"
+
+[node name="Label" type="Label" parent="PlayerData/SwitchMode"]
+layout_mode = 0
+offset_left = -43.0
+offset_bottom = 31.0
+text = "or"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProcessInput" type="Button" parent="PlayerData"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 274.0
+offset_right = 213.0
+offset_bottom = 305.0
+text = "Log in"

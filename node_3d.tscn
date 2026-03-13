@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_a0tk4"]
-[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_jka67"]
+[ext_resource type="PackedScene" uid="uid://doel5qp1fesx8" path="res://MenuAndLevels/open_game.tscn" id="1_jka67"]
 [ext_resource type="PackedScene" uid="uid://dcs4mdrtg4w3u" path="res://Enemies/monster_thing.tscn" id="2_r3fl7"]
 [ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_r3fl7"]
 [ext_resource type="Script" uid="uid://c4jxq3jdv64rg" path="res://label.gd" id="5_jka67"]
@@ -18,108 +18,9 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node"]
 
-[node name="PlayerData" type="TextureRect" parent="."]
-process_priority = 1
-offset_left = 393.0
-offset_top = 159.0
-offset_right = 768.0
-offset_bottom = 477.0
-texture = ExtResource("1_jka67")
-expand_mode = 1
-
-[node name="Login" type="Control" parent="PlayerData"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -393.0
-offset_top = -159.0
-offset_right = -768.0
-offset_bottom = -477.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Username" type="TextEdit" parent="PlayerData/Login"]
-z_index = 1
-layout_mode = 0
-offset_left = 441.0
-offset_top = 262.0
-offset_right = 708.0
-offset_bottom = 310.0
-placeholder_text = "Tudasuda2007"
-
-[node name="Password" type="TextEdit" parent="PlayerData/Login"]
-process_priority = 1
-z_index = 1
-layout_mode = 0
-offset_left = 441.0
-offset_top = 336.0
-offset_right = 708.0
-offset_bottom = 384.0
-placeholder_text = "not1234!"
-
-[node name="Register" type="Control" parent="PlayerData"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -335.0
-offset_bottom = -278.0
-
-[node name="NewUsername" type="TextEdit" parent="PlayerData/Register"]
-z_index = 1
-layout_mode = 0
-offset_left = 47.0
-offset_top = 69.0
-offset_right = 314.0
-offset_bottom = 117.0
-placeholder_text = "Tudasuda2007"
-
-[node name="NewPassword" type="TextEdit" parent="PlayerData/Register"]
-process_priority = 1
-z_index = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 139.0
-offset_right = 315.0
-offset_bottom = 187.0
-placeholder_text = "not1234!"
-
-[node name="NewPassword2" type="TextEdit" parent="PlayerData/Register"]
-process_priority = 1
-z_index = 1
-layout_mode = 0
-offset_left = 48.0
-offset_top = 212.0
-offset_right = 315.0
-offset_bottom = 260.0
-placeholder_text = "not1234!"
-
-[node name="SwitchMode" type="Button" parent="PlayerData"]
-layout_mode = 0
-offset_left = 281.0
-offset_top = 275.0
-offset_right = 343.0
-offset_bottom = 304.0
-text = "Register"
-
-[node name="Label" type="Label" parent="PlayerData/SwitchMode"]
-layout_mode = 0
-offset_left = -43.0
-offset_bottom = 31.0
-text = "or"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ProcessInput" type="Button" parent="PlayerData"]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 274.0
-offset_right = 213.0
-offset_bottom = 305.0
-text = "Log in"
+[node name="OpenGame" parent="." instance=ExtResource("1_jka67")]
 
 [node name="Level1" type="Node3D" parent="."]
 
@@ -159,3 +60,5 @@ texture = SubResource("GradientTexture2D_r3fl7")
 transform = Transform3D(512, 0, 0, 0, 1, 0, 0, 0, 512, -256, 0, 256)
 shape = SubResource("BoxShape3D_noarx")
 debug_color = Color(1, 1, 1, 1)
+
+[node name="MenuLowk" type="Node2D" parent="."]
