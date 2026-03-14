@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcs4mdrtg4w3u"]
 
-[ext_resource type="Script" uid="uid://7jux4chn6f55" path="res://monster_thing.gd" id="1_th73j"]
+[ext_resource type="Script" uid="uid://blioh8afsiwks" path="res://Enemies/monster_thing.gd" id="1_th73j"]
 [ext_resource type="Texture2D" uid="uid://bf2pswdip7yth" path="res://Textures/1794621_4c28a.png" id="2_sl5sm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
 size = Vector3(4.125122, 5.2231445, 3.211914)
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="MonsterThing" type="CharacterBody3D"]
 script = ExtResource("1_th73j")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20595288, 2.1115723, -0.014888763)

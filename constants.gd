@@ -7,3 +7,7 @@ const GET_SCENE: Dictionary = {
 	"level1":"uid://dc33ark5cdfo0",
 	"loadingScreen":"uid://vmmebihfthpj",
 }
+
+const GET_CHARACTER: Dictionary = {
+	"player":"uid://b5uhtmtt532gk",
+}
