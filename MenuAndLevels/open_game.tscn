@@ -1,17 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://doel5qp1fesx8"]
+[gd_scene load_steps=3 format=3 uid="uid://doel5qp1fesx8"]
 
-[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_u78i8"]
+[ext_resource type="Script" uid="uid://cwbttind8nqd7" path="res://MenuAndLevels/player_data.gd" id="1_u78i8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31jox"]
+bg_color = Color(0.19614309, 0.19614312, 0.19614297, 1)
 
 [node name="OpenGame" type="Node2D"]
 
-[node name="PlayerData" type="TextureRect" parent="."]
+[node name="PlayerData" type="Panel" parent="."]
 process_priority = 1
 offset_left = 393.0
 offset_top = 159.0
 offset_right = 768.0
 offset_bottom = 477.0
-texture = ExtResource("1_u78i8")
-expand_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_31jox")
+script = ExtResource("1_u78i8")
 
 [node name="Login" type="Control" parent="PlayerData"]
 layout_mode = 1
@@ -55,6 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NewUsername" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 47.0
@@ -65,6 +69,7 @@ placeholder_text = "Tudasuda2007"
 
 [node name="NewPassword" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 48.0
@@ -75,6 +80,7 @@ placeholder_text = "not1234!"
 
 [node name="NewPassword2" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 48.0
@@ -83,7 +89,7 @@ offset_right = 315.0
 offset_bottom = 260.0
 placeholder_text = "not1234!"
 
-[node name="SwitchMode" type="Button" parent="PlayerData"]
+[node name="SwitchOp" type="Button" parent="PlayerData" groups=["Buttons"]]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 275.0
@@ -91,7 +97,7 @@ offset_right = 343.0
 offset_bottom = 304.0
 text = "Register"
 
-[node name="Label" type="Label" parent="PlayerData/SwitchMode"]
+[node name="Label" type="Label" parent="PlayerData/SwitchOp"]
 layout_mode = 0
 offset_left = -43.0
 offset_bottom = 31.0
@@ -99,10 +105,13 @@ text = "or"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProcessInput" type="Button" parent="PlayerData"]
+[node name="ProcessInput" type="Button" parent="PlayerData" groups=["Buttons"]]
 layout_mode = 0
 offset_left = 141.0
 offset_top = 274.0
 offset_right = 213.0
 offset_bottom = 305.0
 text = "Log in"
+
+[connection signal="button_down" from="PlayerData/SwitchOp" to="PlayerData" method="_on_switch_op_button_down"]
+[connection signal="button_down" from="PlayerData/ProcessInput" to="PlayerData" method="_on_process_input_button_down"]

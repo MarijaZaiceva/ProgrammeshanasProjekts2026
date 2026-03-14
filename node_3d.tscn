@@ -9,5 +9,7 @@
 [node name="OpenGame" parent="." instance=ExtResource("1_jka67")]
 
 [node name="MenuLowk" parent="." instance=ExtResource("2_a0tk4")]
+visible = false
 
 [node name="Level1" parent="." instance=ExtResource("3_r3fl7")]
+visible = false

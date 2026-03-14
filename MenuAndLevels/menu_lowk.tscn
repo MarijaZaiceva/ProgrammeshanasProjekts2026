@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://5r7nnlj7v5he"]
+[gd_scene load_steps=2 format=3 uid="uid://5r7nnlj7v5he"]
+
+[ext_resource type="Texture2D" uid="uid://gpjqowiqt5af" path="res://Textures/planet-svgrepo-com.svg" id="1_oai12"]
 
 [node name="MenuLowk" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 479.0
+offset_top = 211.0
+offset_right = 677.0
+offset_bottom = 383.0
+size_flags_horizontal = 0
+texture_normal = ExtResource("1_oai12")
+ignore_texture_size = true
+stretch_mode = 0
