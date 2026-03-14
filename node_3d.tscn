@@ -1,15 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://6pnpflc3krad"]
+[gd_scene load_steps=2 format=3 uid="uid://6pnpflc3krad"]
 
 [ext_resource type="PackedScene" uid="uid://doel5qp1fesx8" path="res://MenuAndLevels/open_game.tscn" id="1_jka67"]
-[ext_resource type="PackedScene" uid="uid://5r7nnlj7v5he" path="res://MenuAndLevels/menu_lowk.tscn" id="2_a0tk4"]
-[ext_resource type="PackedScene" uid="uid://dc33ark5cdfo0" path="res://MenuAndLevels/level_1.tscn" id="3_r3fl7"]
 
 [node name="Game" type="Node"]
 
 [node name="OpenGame" parent="." instance=ExtResource("1_jka67")]
-
-[node name="MenuLowk" parent="." instance=ExtResource("2_a0tk4")]
-visible = false
-
-[node name="Level1" parent="." instance=ExtResource("3_r3fl7")]
-visible = false

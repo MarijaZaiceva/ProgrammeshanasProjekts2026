@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SceneLoader="*res://scene_loader.gd"
 Constants="*res://constants.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
