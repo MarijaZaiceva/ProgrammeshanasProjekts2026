@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dc33ark5cdfo0"]
+[gd_scene load_steps=12 format=3 uid="uid://dc33ark5cdfo0"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_t8jui"]
 [ext_resource type="PackedScene" uid="uid://dcs4mdrtg4w3u" path="res://Enemies/monster_thing.tscn" id="2_t3yaw"]
 [ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_gyecu"]
-[ext_resource type="Script" uid="uid://c4jxq3jdv64rg" path="res://label.gd" id="4_324lf"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_t8jui"]
 resource_local_to_scene = true
@@ -24,6 +23,18 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pm3qo"]
+
+[sub_resource type="Theme" id="Theme_t8jui"]
+
+[sub_resource type="Animation" id="Animation_t3yaw"]
+resource_name = "Speaker"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gyecu"]
+_data = {
+&"Speaker": SubResource("Animation_t3yaw")
+}
+
 [node name="Level1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_t8jui")]
@@ -34,20 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 2.3777294, 58.2567
 
 [node name="NPC" parent="." instance=ExtResource("3_gyecu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.419731, 0, 48.97629)
-
-[node name="Label" type="Label" parent="."]
-offset_right = 347.0
-offset_bottom = 83.0
-text = "Can you read this?"
-script = ExtResource("4_324lf")
-
-[node name="Button" type="Button" parent="Label"]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 78.0
-offset_right = 346.0
-offset_bottom = 221.0
-text = "yes"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -66,3 +63,40 @@ texture = SubResource("GradientTexture2D_r3fl7")
 transform = Transform3D(512, 0, 0, 0, 1, 0, 0, 0, 512, -256, 0, 256)
 shape = SubResource("BoxShape3D_noarx")
 debug_color = Color(1, 1, 1, 1)
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UserInterface" groups=["SpeechPanel"]]
+visible = false
+z_index = 9
+material = SubResource("CanvasItemMaterial_pm3qo")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -174.0
+offset_right = -48.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_t8jui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UserInterface/Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_gyecu")
+}
+
+[node name="Label" type="Label" parent="UserInterface/Panel" groups=["SpeechPanel"]]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 1042.0
+offset_bottom = 133.0

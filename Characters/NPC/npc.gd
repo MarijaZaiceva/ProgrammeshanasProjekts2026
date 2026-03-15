@@ -6,13 +6,16 @@ var visible_instruction: bool = false
 var first_line_id
 var player: Node = null
 const radius = 20
+const character_name: String = "npc for now"
 
 func _ready() -> void:
-	if get_tree().get_current_scene().has_node("Level1/Player"):
-		player = get_tree().get_current_scene().get_node("Level1/Player")
+	if get_tree().get_nodes_in_group("Player")[0]:
+		player = get_tree().get_nodes_in_group("Player")[0]
 	instruction.set_visible(false)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interract") and _player_near():
+		DialoguePlayer.start_talking_with_(character_name)
 	match stateRN:
 		States.IDLE:
 			if _player_near() and not visible_instruction:

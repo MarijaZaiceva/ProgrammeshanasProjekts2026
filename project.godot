@@ -17,11 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneLoader="*res://scene_loader.gd"
-Constants="*res://constants.gd"
+SceneLoader="*res://tools/scene_loader.gd"
+Constants="*res://tools/constants.gd"
+DialoguePlayer="*res://tools/dialogue_player.gd"
 
 [display]
 
+window/size/viewport_width=1167
+window/size/viewport_height=658
 window/stretch/mode="viewport"
 
 [editor]
@@ -32,6 +35,7 @@ version_control/autoload_on_startup=true
 [global_group]
 
 Player="just the guy"
+SpeechPanel=""
 
 [input]
 

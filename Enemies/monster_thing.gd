@@ -2,13 +2,13 @@ extends CharacterBody3D
 
 var spawn_position: Vector3
 var direction: Vector3 = Vector3.ZERO
-enum States { WANDER, CHASE, ATTACK }
+enum States { WANDER, CHASE, PAUSE, ATTACK}
 var stateRN: States = States.WANDER
 var goal: Node = null
 var attack_timer: float = 0.0
 var attacking: bool = false
-const detection_radius = 300.0
-const attack_range = 10
+const detection_radius = 20.0
+const attack_range = 0
 const wander_radius = 40
 const wander_speed = 5
 const chase_speed = 25
@@ -22,14 +22,11 @@ func _ready():
 	#state_machine = anim_tree.get("parameters/playback")
 	goal = get_tree().get_nodes_in_group("Player")[0]
 		
-	print(goal)
 	pick_new_wander_target()
 	
 func _process(delta: float) -> void:
 	if not goal:
 		return
-	if attack_timer > 0:
-		attack_timer-=delta
 	if attacking:
 		#_update_animation(Vector3.ZERO)
 		move_and_slide()                   
@@ -37,18 +34,17 @@ func _process(delta: float) -> void:
 	match stateRN:
 		States.WANDER:   
 			wanderin(delta)
-			
-			if player_seen(detection_radius):
+			if player_in_(detection_radius):
 				stateRN=States.CHASE
 		States.CHASE:
-			print("im chasin :3")
 			chasin(delta)
-			if not player_seen(detection_radius):
+			if not player_in_(detection_radius):
 				stateRN=States.WANDER
-			if player_close() and attack_timer <= 0:
+			if player_in_(attack_range) and attack_timer <= 0:
 				stateRN=States.ATTACK
 		States.ATTACK:
-			_begin_fight()
+			attacking = true
+			dash_through()
 			
 	move_and_slide()
 	#_update_animation(velocity)
@@ -70,18 +66,15 @@ func set_next_path(speed):
 	
 func wanderin(delta: float):
 	wander_timer -= delta
-	if global_position.distance_to(wander_target) < 8.0 or agent.is_navigation_finished():
+	if global_position.distance_to(wander_target) < wander_speed-1.0 or agent.is_navigation_finished():
 		velocity = Vector3.ZERO
 		if wander_timer <= 0:
 			pick_new_wander_target()
 		return
 	set_next_path(wander_speed)
 	
-func player_seen(visible_dist: float):
+func player_in_(visible_dist: float):
 	return is_instance_valid(goal) and global_position.distance_to(goal.global_position) <= visible_dist
-
-func player_close():
-	return is_instance_valid(goal) and global_position.distance_to(goal.global_position) <= attack_range
 	
 func chasin(delta:float) -> void :
 	if not goal:
@@ -89,5 +82,8 @@ func chasin(delta:float) -> void :
 	agent.target_position = goal.global_position
 	set_next_path(chase_speed)
 	
-func _begin_fight():
-	pass
+func dash_through():
+	agent.target_position = global_position
+	set_process(false)
+	await get_tree().create_timer(1).timeout
+	agent.target_position = Vector3(0,0,-100)
