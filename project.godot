@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneLoader="*res://tools/scene_loader.gd"
 Constants="*res://tools/constants.gd"
+SceneLoader="*res://tools/scene_loader.gd"
 DialoguePlayer="*res://tools/dialogue_player.gd"
+Progress="*res://tools/progress.gd"
 
 [display]
 
