@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc33ark5cdfo0"]
+[gd_scene load_steps=8 format=3 uid="uid://dc33ark5cdfo0"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_t8jui"]
 [ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_gyecu"]
 [ext_resource type="PackedScene" uid="uid://r50r3kb7wjos" path="res://MenuAndLevels/user_interface.tscn" id="3_t8jui"]
 [ext_resource type="Script" uid="uid://c8b0fl1t52xgq" path="res://MenuAndLevels/spawner.gd" id="4_t8jui"]
+[ext_resource type="Script" uid="uid://b8un2tdmjtddo" path="res://MenuAndLevels/borders.gd" id="5_t3yaw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_t8jui"]
 resource_local_to_scene = true
@@ -17,7 +18,7 @@ agent_max_climb = 0.0
 [node name="Level1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_t8jui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.722179, 6.1711483, 10.394287)
 
 [node name="NPC" parent="." instance=ExtResource("3_gyecu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.419731, 0, 48.97629)
@@ -40,13 +41,16 @@ debug_color = Color(1, 1, 1, 1)
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -66.013885, 0.6379585, 38.874405)
 script = ExtResource("4_t8jui")
 
-[node name="MarkMin" type="Marker3D" parent="."]
+[node name="Borders" type="Node" parent="."]
+script = ExtResource("5_t3yaw")
 
-[node name="TeleportMin" type="Marker3D" parent="MarkMin"]
+[node name="MarkMin" type="Marker3D" parent="Borders" groups=["Borders"]]
+
+[node name="TeleportMin" type="Marker3D" parent="Borders/MarkMin" groups=["Borders"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20)
 
-[node name="MarkMax" type="Marker3D" parent="."]
+[node name="MarkMax" type="Marker3D" parent="Borders" groups=["Borders"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.59993, 0, 102.97441)
 
-[node name="TeleportMax" type="Marker3D" parent="MarkMax"]
+[node name="TeleportMax" type="Marker3D" parent="Borders/MarkMax" groups=["Borders"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
