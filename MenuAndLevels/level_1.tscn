@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc33ark5cdfo0"]
+[gd_scene load_steps=10 format=3 uid="uid://dc33ark5cdfo0"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_t8jui"]
-[ext_resource type="PackedScene" uid="uid://dcs4mdrtg4w3u" path="res://Enemies/monster_thing.tscn" id="2_t3yaw"]
 [ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_gyecu"]
+[ext_resource type="Script" uid="uid://c8b0fl1t52xgq" path="res://MenuAndLevels/spawner.gd" id="4_t8jui"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_t8jui"]
 resource_local_to_scene = true
@@ -10,16 +10,6 @@ vertices = PackedVector3Array(-511.49994, 1, 0.5, -511.49994, 1, 511.5, -0.49993
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_height = 26.98
 agent_max_climb = 0.0
-
-[sub_resource type="Gradient" id="Gradient_a0tk4"]
-colors = PackedColorArray(0.12935773, 0.21175227, 0.06761927, 1, 1, 1, 0.6901961, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r3fl7"]
-gradient = SubResource("Gradient_a0tk4")
-width = 1000
-height = 1000
-fill_from = Vector2(0.14252336, 0.1495327)
-fill_to = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 
@@ -40,9 +30,6 @@ _data = {
 [node name="Player" parent="." instance=ExtResource("1_t8jui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1711483, 0)
 
-[node name="MonsterThing" parent="." instance=ExtResource("2_t3yaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.64871, 2.3777294, 58.25673)
-
 [node name="NPC" parent="." instance=ExtResource("3_gyecu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.419731, 0, 48.97629)
 
@@ -52,12 +39,6 @@ navigation_mesh = SubResource("NavigationMesh_t8jui")
 
 [node name="TestingGround" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/TestingGround"]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -50.750412, 0, 50.171974)
-pixel_size = 0.1
-axis = 1
-texture = SubResource("GradientTexture2D_r3fl7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/TestingGround"]
 transform = Transform3D(512, 0, 0, 0, 1, 0, 0, 0, 512, -256, 0, 256)
@@ -100,3 +81,15 @@ offset_left = 18.0
 offset_top = 21.0
 offset_right = 1042.0
 offset_bottom = 133.0
+
+[node name="TextureButton" type="Button" parent="UserInterface"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 57.0
+text = "menu"
+
+[node name="Spawner" type="Marker3D" parent="."]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -66.013885, 0.6379585, 38.874405)
+script = ExtResource("4_t8jui")
