@@ -38,7 +38,7 @@ debug_color = Color(1, 1, 1, 1)
 [node name="UserInterface" parent="." instance=ExtResource("3_t8jui")]
 
 [node name="Spawner" type="Marker3D" parent="."]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -66.013885, 0.6379585, 38.874405)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -43.581467, 0.6379585, 105.03938)
 script = ExtResource("4_t8jui")
 
 [node name="Borders" type="Node" parent="."]
@@ -50,7 +50,7 @@ script = ExtResource("5_t3yaw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20)
 
 [node name="MarkMax" type="Marker3D" parent="Borders" groups=["Borders"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.59993, 0, 102.97441)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.67314, 0, 145.92989)
 
 [node name="TeleportMax" type="Marker3D" parent="Borders/MarkMax" groups=["Borders"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)

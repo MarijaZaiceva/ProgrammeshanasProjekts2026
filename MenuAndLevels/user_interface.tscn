@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://r50r3kb7wjos"]
+
+[ext_resource type="Script" uid="uid://xhmoy1isrxpk" path="res://MenuAndLevels/menu_button.gd" id="1_ufvkp"]
+[ext_resource type="Script" uid="uid://88g78os3qtl8" path="res://MenuAndLevels/inventory.gd" id="2_w0s0u"]
+[ext_resource type="Script" uid="uid://gu6hwif0g5pk" path="res://MenuAndLevels/options.gd" id="2_w60tg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pm3qo"]
+
+[sub_resource type="Theme" id="Theme_t8jui"]
+
+[sub_resource type="Animation" id="Animation_t3yaw"]
+resource_name = "Speaker"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gyecu"]
+_data = {
+&"Speaker": SubResource("Animation_t3yaw")
+}
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." groups=["SpeechPanel"]]
+visible = false
+z_index = 9
+material = SubResource("CanvasItemMaterial_pm3qo")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -174.0
+offset_right = -48.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_t8jui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_gyecu")
+}
+
+[node name="Label" type="Label" parent="Panel" groups=["SpeechPanel"]]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 21.0
+offset_right = 1042.0
+offset_bottom = 133.0
+
+[node name="MenuButton" type="Button" parent="." groups=["Options"]]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 57.0
+text = "menu"
+script = ExtResource("1_ufvkp")
+
+[node name="InventoryButton" type="Button" parent="." groups=["Options"]]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 21.0
+offset_right = 188.0
+offset_bottom = 57.0
+text = "inventory"
+script = ExtResource("2_w0s0u")
+
+[node name="Inventory" type="RichTextLabel" parent="InventoryButton"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0120482
+anchor_top = 1.5555556
+anchor_right = -0.15662651
+anchor_bottom = 2.0555556
+offset_right = 185.0
+offset_bottom = 177.0
+
+[node name="Options" type="MenuButton" parent="." groups=["Options"]]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -185.0
+offset_right = 184.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_w60tg")
+
+[node name="Return" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123641305
+anchor_top = 0.097297296
+anchor_right = 0.8682066
+anchor_bottom = 0.2945946
+offset_top = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"
+
+[node name="Save" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123641305
+anchor_top = 0.097297296
+anchor_right = 0.8682066
+anchor_bottom = 0.2945946
+offset_top = 111.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Save"
+
+[node name="Quit" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123641305
+anchor_top = 0.097297296
+anchor_right = 0.8682066
+anchor_bottom = 0.2945946
+offset_top = 217.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
+[connection signal="button_down" from="InventoryButton" to="InventoryButton" method="_on_button_down"]
+[connection signal="button_up" from="InventoryButton" to="InventoryButton" method="_on_button_up"]
+[connection signal="button_down" from="Options/Return" to="MenuButton" method="_on_return_button_down"]
+[connection signal="button_down" from="Options/Save" to="Options" method="_on_save_button_down"]
+[connection signal="button_down" from="Options/Quit" to="Options" method="_on_quit_button_down"]
