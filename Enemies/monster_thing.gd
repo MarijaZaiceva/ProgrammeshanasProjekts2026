@@ -15,6 +15,7 @@ const chase_speed = 25
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
 var wander_target: Vector3
 var wander_timer=0
+var health := 100
 
 
 func _ready():

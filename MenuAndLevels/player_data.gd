@@ -25,6 +25,7 @@ func _change_operation() -> void:
 			operationRN = Operations.LOG_IN
 	input_button.text=(ButtonText[operationRN])
 	switch_button.text=(ButtonText[1-operationRN])
+	
 	for obj in get_tree().get_nodes_in_group(ButtonGroups[operationRN]):
 		obj.set_visible(true)
 	for obj in get_tree().get_nodes_in_group(ButtonGroups[1-operationRN]):

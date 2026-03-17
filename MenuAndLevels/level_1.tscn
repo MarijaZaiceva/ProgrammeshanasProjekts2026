@@ -50,7 +50,7 @@ script = ExtResource("5_t3yaw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20)
 
 [node name="MarkMax" type="Marker3D" parent="Borders" groups=["Borders"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.67314, 0, 145.92989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.69006, 0, 142.4517)
 
 [node name="TeleportMax" type="Marker3D" parent="Borders/MarkMax" groups=["Borders"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
