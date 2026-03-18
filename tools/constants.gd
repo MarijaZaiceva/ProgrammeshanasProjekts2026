@@ -11,4 +11,5 @@ const GET_SCENE: Dictionary = {
 const GET_CHARACTER: Dictionary = {
 	"player":"uid://b5uhtmtt532gk",
 	"monster_thing":"uid://dcs4mdrtg4w3u",
+	"item":"uid://d1qvyff2vo68f"
 }

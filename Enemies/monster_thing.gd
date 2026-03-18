@@ -15,11 +15,12 @@ const chase_speed = 25
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
 var wander_target: Vector3
 var wander_timer=0
-var health := 100
+var healthbar : Node = null
 
 
 func _ready():
 	spawn_position = global_position
+	healthbar = self.find_child('HealthBar')
 	#state_machine = anim_tree.get("parameters/playback")
 	goal = get_tree().get_nodes_in_group("Player")[0]
 		
@@ -36,10 +37,12 @@ func _process(delta: float) -> void:
 		States.WANDER:   
 			wanderin(delta)
 			if player_in_(detection_radius):
+				healthbar.visible = true
 				stateRN=States.CHASE
 		States.CHASE:
 			chasin(delta)
 			if not player_in_(detection_radius):
+				healthbar.visible = false
 				stateRN=States.WANDER
 			if player_in_(attack_range) and attack_timer <= 0:
 				stateRN=States.ATTACK

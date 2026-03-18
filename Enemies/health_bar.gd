@@ -3,10 +3,11 @@ extends Label3D
 const hitbox_radius:= 15
 var dad: Node = null
 var player: Node = null
-var health :float = 120
+var health :float = 12
 var max_health :float
 var dealt_damage :float = 5
 var am :float = 0
+var drop_it: PackedScene = preload(Constants.GET_CHARACTER.item)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -38,5 +39,10 @@ func get_health_bar()-> String:
 	return line
 	
 func die():
-	dad.queue_free()
+	var rand = randf_range(1,2)
+	for x in rand:
+		var new_item = drop_it.instantiate()
+		new_item.global_position = dad.global_position	
+		get_tree().get_first_node_in_group("Level").add_child.call_deferred(new_item)
+	dad.queue_free()	
 		

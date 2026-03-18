@@ -37,6 +37,7 @@ version_control/autoload_on_startup=true
 
 Player="just the guy"
 SpeechPanel=""
+Level=""
 
 [input]
 

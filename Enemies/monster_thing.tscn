@@ -24,6 +24,7 @@ texture = ExtResource("2_sl5sm")
 
 [node name="HealthBar" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8631964, 0)
+visible = false
 billboard = 2
 modulate = Color(0, 0.88235295, 0.4392157, 1)
 text = "■■■■■■"
