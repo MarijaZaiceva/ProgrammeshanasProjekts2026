@@ -13,7 +13,6 @@ func _ready() -> void:
 	dad = self.get_parent()
 	max_health=health
 	am = health/6
-	print (dad)
 	
 	pass # Replace with function body.
 
@@ -22,7 +21,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:	
 	if player_around() and Input.is_action_just_pressed("attack"):
 		health-=dealt_damage
-		print(health)
+
 		if health >0:
 			self.text = get_health_bar()
 		else:
