@@ -1,6 +1,6 @@
 extends Panel
 
-var username = ""
+var user : String = ""
 var password
 
 const ButtonText = ["Log in", "Sign in"]
@@ -8,8 +8,8 @@ const ButtonGroups = ["LoginObjects","SigninObjects"]
 enum Operations {LOG_IN, SIGN_IN}
 var operationRN = Operations.LOG_IN
 
-var switch_button: Node = null
-var input_button: Node = null
+var switch_button: Button = null
+var input_button: Button = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,3 +34,16 @@ func _change_operation() -> void:
 func _on_switch_op_button_down() -> void:
 	_change_operation()
 	 # Replace with function body.
+	
+# sum additional
+
+func valid () -> bool:
+	return true
+	
+func error () -> String:
+	match operationRN:
+		Operations.LOG_IN:
+			return "● can't log in. Check for spelling mistakes."
+		Operations.SIGN_IN:
+			return "● can't let you join. Aura too low."
+	return "tfff"
