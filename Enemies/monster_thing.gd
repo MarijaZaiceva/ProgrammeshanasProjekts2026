@@ -7,7 +7,7 @@ var stateRN: States = States.WANDER
 var goal: Node = null
 var attack_timer : float
 var attacking : bool = false
-const detection_radius := 20.0
+const detection_radius := 50.0
 const attack_radius := 15
 const wander_radius := 40
 const wander_speed := 5
@@ -95,13 +95,19 @@ func chasin() -> void :
 	
 func dash_through(delta: float):
 	match true:
-		_ when attack_timer < 0.4:
-			planning_to = goal.global_position
-		_ when attack_timer < 0.8:
+		_ when attack_timer < 0.7:
+			velocity = direction * delta 
+			set_next_path(velocity*4)
+		_ when attack_timer < 1.1:
+			if attack_timer+delta>=1.1:
+				planning_to=planning_to-global_position
+				planning_to*=100
 			agent.target_position = planning_to 
 			set_next_path(attack_speed*attack_timer*2)
 		_:
-			velocity = direction * delta 
-			set_next_path(velocity*4)
+			
+			planning_to=goal.global_position
+			agent.target_position = planning_to 
+			set_next_path(15)
 		
 	
