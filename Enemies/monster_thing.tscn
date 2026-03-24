@@ -8,6 +8,8 @@
 size = Vector3(4.125122, 5.2231445, 3.211914)
 
 [node name="MonsterThing" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_th73j")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

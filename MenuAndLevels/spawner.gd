@@ -5,7 +5,7 @@ const spawn_rad = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in 10:
+	for i in 1:
 		spawn_()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

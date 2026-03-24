@@ -2,20 +2,22 @@ extends CharacterBody3D
 
 var spawn_position: Vector3
 var direction: Vector3 = Vector3.ZERO
-enum States { WANDER, CHASE, PAUSE, ATTACK}
+enum States { WANDER, CHASE, ATTACK}
 var stateRN: States = States.WANDER
 var goal: Node = null
-var attack_timer: float = 0.0
-var attacking: bool = false
-const detection_radius = 20.0
-const attack_range = 0
-const wander_radius = 40
-const wander_speed = 5
-const chase_speed = 25
-@onready var agent: NavigationAgent3D = $NavigationAgent3D
-var wander_target: Vector3
-var wander_timer=0
+var attack_timer : float
+var attacking : bool = false
+const detection_radius := 20.0
+const attack_radius := 15
+const wander_radius := 40
+const wander_speed := 5
+const attack_speed := 30 
+const chase_speed := 25
+@onready var agent : NavigationAgent3D = $NavigationAgent3D
+var wander_target : Vector3
+var wander_timer : float
 var healthbar : Node = null
+var planning_to:Vector3
 
 
 func _ready():
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 		return
 	if attacking:
 		#_update_animation(Vector3.ZERO)
+		dash_through(delta)
 		move_and_slide()                   
 		
 	match stateRN:
@@ -40,15 +43,19 @@ func _process(delta: float) -> void:
 				healthbar.visible = true
 				stateRN=States.CHASE
 		States.CHASE:
-			chasin(delta)
+			chasin()
 			if not player_in_(detection_radius):
 				healthbar.visible = false
 				stateRN=States.WANDER
-			if player_in_(attack_range) and attack_timer <= 0:
+			if player_in_(attack_radius) and attack_timer <= 0:
+				attack_timer = 1.5+delta
+				direction = Vector3.ZERO
 				stateRN=States.ATTACK
 		States.ATTACK:
-			attacking = true
-			dash_through()
+			attack_timer-=delta
+			dash_through(delta)
+			if attack_timer<0:
+				stateRN=States.CHASE
 			
 	move_and_slide()
 	#_update_animation(velocity)
@@ -80,14 +87,21 @@ func wanderin(delta: float):
 func player_in_(visible_dist: float):
 	return is_instance_valid(goal) and global_position.distance_to(goal.global_position) <= visible_dist
 	
-func chasin(delta:float) -> void :
+func chasin() -> void :
 	if not goal:
 		return
 	agent.target_position = goal.global_position
 	set_next_path(chase_speed)
 	
-func dash_through():
-	agent.target_position = global_position
-	set_process(false)
-	await get_tree().create_timer(1).timeout
-	agent.target_position = Vector3(0,0,-100)
+func dash_through(delta: float):
+	match true:
+		_ when attack_timer < 0.4:
+			planning_to = goal.global_position
+		_ when attack_timer < 0.8:
+			agent.target_position = planning_to 
+			set_next_path(attack_speed*attack_timer*2)
+		_:
+			velocity = direction * delta 
+			set_next_path(velocity*4)
+		
+	

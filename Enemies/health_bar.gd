@@ -44,5 +44,5 @@ func die():
 		var new_item = drop_it.instantiate()
 		new_item.global_position = dad.global_position	
 		get_tree().get_first_node_in_group("Level").add_child.call_deferred(new_item)
-	dad.queue_free()	
+	dad.queue_free()
 		
