@@ -5,7 +5,7 @@ var stateRN = States.IDLE
 var visible_instruction: bool = false
 var first_line_id
 var player: Node = null
-const radius = 20
+const radius := 20
 const character_name: String = "npc for now"
 
 func _ready() -> void:

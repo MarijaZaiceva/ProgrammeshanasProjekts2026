@@ -21,6 +21,7 @@ Constants="*res://tools/constants.gd"
 SceneLoader="*res://tools/scene_loader.gd"
 DialoguePlayer="*res://tools/dialogue_player.gd"
 Progress="*res://tools/progress.gd"
+SignalBus="*res://tools/signalBus.gd"
 
 [display]
 

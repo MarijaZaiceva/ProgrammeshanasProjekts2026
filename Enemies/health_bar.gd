@@ -8,6 +8,7 @@ var max_health :float
 var dealt_damage :float = 5
 var am :float = 0
 var drop_it: PackedScene = preload(Constants.GET_CHARACTER.item)
+const respawn_in := 5.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -44,5 +45,6 @@ func die():
 		var new_item = drop_it.instantiate()
 		new_item.global_position = dad.global_position	
 		get_tree().get_first_node_in_group("Level").add_child.call_deferred(new_item)
+	SignalBus.johny_is_dead.emit(respawn_in)
 	dad.queue_free()
 		

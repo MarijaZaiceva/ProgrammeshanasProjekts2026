@@ -1,9 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5uhtmtt532gk"]
+[gd_scene load_steps=6 format=3 uid="uid://b5uhtmtt532gk"]
 
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://Characters/player.gd" id="1_eovys"]
 [ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="2_vb825"]
+[ext_resource type="Script" uid="uid://btwtbrjyod6kx" path="res://Characters/main_health_bar.gd" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[sub_resource type="FontFile" id="FontFile_vb825"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -28,3 +44,19 @@ current = true
 [node name="OmniLight3D" type="OmniLight3D" parent="SpringArm3D"]
 transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82239234, -4.908226, -1.2507219, 14.21693)
 light_energy = 1.26
+
+[node name="MainHealthBar" type="Label" parent="."]
+offset_left = 950.0
+offset_top = 17.0
+offset_right = 1155.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 1, 0.4392157, 1)
+theme_override_colors/font_outline_color = Color(0, 1, 0.4392157, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontFile_vb825")
+theme_override_font_sizes/font_size = 20
+text = "||||||||||||||||||||||||||||||||||||||||"
+horizontal_alignment = 2
+script = ExtResource("3_vb825")
