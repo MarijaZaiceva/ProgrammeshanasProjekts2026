@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5uhtmtt532gk"]
+[gd_scene load_steps=8 format=3 uid="uid://b5uhtmtt532gk"]
 
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://Characters/player.gd" id="1_eovys"]
 [ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="2_vb825"]
 [ext_resource type="Script" uid="uid://btwtbrjyod6kx" path="res://Characters/main_health_bar.gd" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vb825"]
 
 [sub_resource type="FontFile" id="FontFile_vb825"]
 subpixel_positioning = 0
@@ -21,6 +23,8 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_vb825"]
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 9
@@ -33,6 +37,9 @@ texture = ExtResource("2_vb825")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_vb825")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -20)
@@ -60,3 +67,7 @@ theme_override_font_sizes/font_size = 20
 text = "||||||||||||||||||||||||||||||||||||||||"
 horizontal_alignment = 2
 script = ExtResource("3_vb825")
+
+[node name="CollisionShape3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, -1.5098083)
+mesh = SubResource("CylinderMesh_vb825")
