@@ -21,7 +21,6 @@ shape = SubResource("BoxShape3D_a0tk4")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
 layers = 2
 billboard = 1
-shaded = true
 texture_filter = 0
 texture = ExtResource("2_sl5sm")
 
