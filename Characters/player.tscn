@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://btwtbrjyod6kx" path="res://Characters/main_health_bar.gd" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+radius = 0.4
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vb825"]
 radius = 0.4
@@ -40,6 +41,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_noarx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
 mesh = SubResource("CapsuleMesh_vb825")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
@@ -48,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -20)
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(-1, -5.6194274e-08, 6.696973e-08, 0, 0.76604444, 0.6427876, -8.742278e-08, 0.6427876, -0.76604444, 0, 0, 0)
 current = true
+far = 50.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SpringArm3D"]
 transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82239234, -4.908226, -1.2507219, 14.21693)
@@ -72,3 +75,5 @@ script = ExtResource("3_vb825")
 [node name="CollisionShape3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, -1.5098083)
 mesh = SubResource("CylinderMesh_vb825")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape3D2"]

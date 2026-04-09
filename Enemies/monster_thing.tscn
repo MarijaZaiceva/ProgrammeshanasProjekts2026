@@ -19,7 +19,10 @@ shape = SubResource("BoxShape3D_a0tk4")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
-layers = 2
+layers = 3
+cast_shadow = 0
+gi_mode = 2
+gi_lightmap_texel_scale = 1.9293
 billboard = 1
 shaded = true
 texture_filter = 0

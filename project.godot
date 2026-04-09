@@ -26,6 +26,7 @@ SceneLoader="*res://tools/scene_loader.gd"
 DialoguePlayer="*res://tools/dialogue_player.gd"
 Progress="*res://tools/progress.gd"
 SignalBus="*res://tools/signalBus.gd"
+TestingAll="*res://Documents/Testing_All.gd"
 
 [display]
 
