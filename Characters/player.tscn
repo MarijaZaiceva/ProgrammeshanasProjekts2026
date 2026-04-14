@@ -45,16 +45,12 @@ visible = false
 mesh = SubResource("CapsuleMesh_vb825")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, -36)
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(-1, -5.6194274e-08, 6.696973e-08, 0, 0.76604444, 0.6427876, -8.742278e-08, 0.6427876, -0.76604444, 0, 0, 0)
+transform = Transform3D(-1, 5.2612336e-08, -6.981894e-08, 0, 0.79863554, 0.601815, 8.742278e-08, 0.601815, -0.79863554, 0, 0, 0)
 current = true
-far = 50.0
-
-[node name="OmniLight3D" type="OmniLight3D" parent="SpringArm3D"]
-transform = Transform3D(0.82239234, 0, 0.56892073, 0, 1, 0, -0.56892073, 0, 0.82239234, -4.908226, -1.2507219, 14.21693)
-light_energy = 1.26
+far = 2000.0
 
 [node name="MainHealthBar" type="Label" parent="."]
 offset_left = 950.0

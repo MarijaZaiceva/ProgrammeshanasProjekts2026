@@ -796,6 +796,8 @@ uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true
 texture_filter = 0
+stencil_flags = 1
+stencil_compare = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trs5f"]
 resource_name = "Wood"
@@ -2712,11 +2714,6 @@ shadow_mesh = SubResource("ArrayMesh_t0ff4")
 
 [node name="Player" parent="." instance=ExtResource("1_t8jui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.722179, 6.1711483, 10.394287)
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Player"]
-emission_shape = 4
-emission_points = PackedVector3Array()
-emission_colors = PackedColorArray(0.65882355, 0.39215687, 0, 1)
 
 [node name="NPC" parent="." instance=ExtResource("3_gyecu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.5375, 0, 48.34479)

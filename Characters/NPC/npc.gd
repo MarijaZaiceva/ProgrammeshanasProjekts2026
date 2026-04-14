@@ -6,7 +6,7 @@ var visible_instruction: bool = false
 var first_line_id
 var player: Node = null
 const radius := 20
-const character_name: String = "npc for now"
+const character_name: String = "čau brāl"
 
 func _ready() -> void:
 	if get_tree().get_nodes_in_group("Player")[0]:
