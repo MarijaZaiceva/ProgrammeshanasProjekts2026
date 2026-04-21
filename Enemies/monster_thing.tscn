@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcs4mdrtg4w3u"]
+[gd_scene load_steps=7 format=3 uid="uid://dcs4mdrtg4w3u"]
 
 [ext_resource type="Script" uid="uid://blioh8afsiwks" path="res://Enemies/monster_thing.gd" id="1_th73j"]
 [ext_resource type="Texture2D" uid="uid://d2yc0g0ggy7ai" path="res://Textures/bugorok.png" id="2_sl5sm"]
@@ -6,6 +6,21 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0tk4"]
 size = Vector3(4.125122, 5.2231445, 3.211914)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idgg8"]
+atlas = ExtResource("2_sl5sm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e265"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idgg8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MonsterThing" type="CharacterBody3D"]
 collision_layer = 4
@@ -17,17 +32,6 @@ script = ExtResource("1_th73j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20595288, 2.1115723, -0.014888763)
 shape = SubResource("BoxShape3D_a0tk4")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
-layers = 3
-cast_shadow = 0
-gi_mode = 2
-gi_lightmap_texel_scale = 1.9293
-billboard = 1
-shaded = true
-texture_filter = 0
-texture = ExtResource("2_sl5sm")
-
 [node name="HealthBar" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8631964, 0)
 visible = false
@@ -36,3 +40,12 @@ modulate = Color(0, 0.88235295, 0.4392157, 1)
 text = "■■■■■■"
 font_size = 200
 script = ExtResource("3_sl5sm")
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
+layers = 3
+cast_shadow = 0
+billboard = 1
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_6e265")
