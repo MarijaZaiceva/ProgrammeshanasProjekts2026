@@ -8,4 +8,7 @@ https://docs.google.com/document/d/1CC5fHHk4pK1TbVUV-1esYtpA7DHGT_mVZGWQSX-q5l4/
 Prasības (12.02): 
 https://github.com/MarijaZaiceva/ProgrammeshanasProjekts2026/blob/main/Prasibas.txt 
 
+Testešānas rezultāti (23.04):
+https://github.com/MarijaZaiceva/ProgrammeshanasProjekts2026/blob/main/Documents/Mazais%20Princis%202.0.docx
+
 Dokumentācija (tba):
