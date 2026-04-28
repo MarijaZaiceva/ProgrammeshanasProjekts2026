@@ -27,6 +27,9 @@ DialoguePlayer="*res://tools/dialogue_player.gd"
 Progress="*res://tools/progress.gd"
 SignalBus="*res://tools/signalBus.gd"
 TestingAll="*res://Documents/Testing_All.gd"
+Console="*res://addons/gameconsole/console/console.gd"
+GlobalDevConsole="*res://tools/global_dev_console.gd"
+PlayerData="*res://MenuAndLevels/player_data.gd"
 
 [display]
 
@@ -38,10 +41,6 @@ window/stretch/mode="viewport"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/NormalMap/plugin.cfg")
 
 [global_group]
 

@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interract") and _player_near():
-		DialoguePlayer.start_talking_with_(character_name)
+		DialoguePlayer.start_talking_with_(character_name, 1)
 	match stateRN:
 		States.IDLE:
 			if _player_near() and not visible_instruction:
