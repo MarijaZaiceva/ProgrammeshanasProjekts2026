@@ -32,7 +32,7 @@ func start_talking_with_(name: String, num: int) -> void:
 		return
 	is_talking = true
 	panel.set_visible(true)
-	say(name+str(num)+str(PlayerData.valid()))
+	say(name+str(num))
 	
 #func get_fullscript(name: String, num: int) -> String:
 	#url = urlbase + "players/"+ str(num)

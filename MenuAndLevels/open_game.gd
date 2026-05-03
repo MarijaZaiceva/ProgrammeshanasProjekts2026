@@ -9,10 +9,14 @@ func _ready() -> void:
 	
 
 func _on_process_input_button_down() -> void:
-	if player_data.valid():
+	
+	player_data.valid()
+	await SignalBus.got_news
+	if player_data.valid_data:
 		SceneLoader.load_scene(menu_path)
 	else:
 		error_area.visible=true
 		error_area.text = player_data.error()
+		#set
 	pass # Replace with function body.
 	

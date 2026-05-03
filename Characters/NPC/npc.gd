@@ -1,16 +1,17 @@
-extends CharacterBody3D
-enum States {IDLE,PLAYERNEAR}
-var stateRN = States.IDLE
+class_name Npc extends StaticBody3D
+
 @onready var instruction = $Label3D
+@onready var player:= get_tree().get_nodes_in_group("Player")[0]
+
+enum States {IDLE,PLAYERNEAR}
+
+var stateRN = States.IDLE
 var visible_instruction: bool = false
-var first_line_id
-var player: Node = null
-const radius := 20
-const character_name: String = "čau brāl"
+@export var character_name: String = "čau brāl"
+
+const radius := 40
 
 func _ready() -> void:
-	if get_tree().get_nodes_in_group("Player")[0]:
-		player = get_tree().get_nodes_in_group("Player")[0]
 	instruction.set_visible(false)
 	
 func _physics_process(_delta: float) -> void:

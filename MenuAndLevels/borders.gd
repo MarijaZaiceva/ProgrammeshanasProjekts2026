@@ -41,10 +41,18 @@ func _process(delta: float) -> void:
 	
 func is_inside(z, x):
 	if z < borderBottom:
+		print (player.global_position)
 		player.global_position.z = tpTop
+		print (player.global_position)
 	if z > borderTop:
+		print (player.global_position)
 		player.global_position.z = tpBottom
+		print (player.global_position)
 	if x < borderRight:
+		print (player.global_position)
 		player.global_position.x = tpLeft
+		print (player.global_position)
 	if x > borderLeft:
+		print (player.global_position)
 		player.global_position.x = tpRight
+		print (player.global_position)

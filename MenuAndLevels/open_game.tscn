@@ -127,5 +127,12 @@ offset_right = 260.0
 offset_bottom = 28.0
 text = "● omagaaaad!!!!!!!"
 
+[node name="CheckPlayer" type="HTTPRequest" parent="PlayerData"]
+
+[node name="AddPlayer" type="HTTPRequest" parent="PlayerData"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(60, 585)
+
 [connection signal="button_down" from="PlayerData/SwitchOp" to="PlayerData" method="_on_switch_op_button_down"]
 [connection signal="button_down" from="PlayerData/ProcessInput" to="." method="_on_process_input_button_down"]

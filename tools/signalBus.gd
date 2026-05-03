@@ -3,3 +3,5 @@ extends Node
 
 signal get_damaged_bozo(damage)
 signal johny_is_dead(time)
+
+signal got_news()
