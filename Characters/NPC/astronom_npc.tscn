@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0y0oa5o5ms6q"]
+
+[ext_resource type="Script" uid="uid://bm3x2106cgagf" path="res://Characters/NPC/npc.gd" id="1_0smc7"]
+[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_2w8hm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wx7hr"]
+size = Vector3(10.880586, 10.502563, 10.316781)
+
+[node name="astronom_npc" type="StaticBody3D"]
+script = ExtResource("1_0smc7")
+metadata/_custom_type_script = "uid://bm3x2106cgagf"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3931484, 0)
+billboard = 2
+texture = ExtResource("1_2w8hm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)
+shape = SubResource("BoxShape3D_wx7hr")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.032589, 0)
+billboard = 1
+text = "Press \"Enter\" to chat"
+font_size = 300
+outline_size = 50
