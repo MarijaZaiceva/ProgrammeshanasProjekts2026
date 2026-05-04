@@ -1,11 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://doel5qp1fesx8"]
+[gd_scene load_steps=14 format=3 uid="uid://doel5qp1fesx8"]
 
 [ext_resource type="Script" uid="uid://cwbttind8nqd7" path="res://MenuAndLevels/player_data.gd" id="1_u78i8"]
 [ext_resource type="Script" uid="uid://2th3kthrg4qs" path="res://MenuAndLevels/open_game.gd" id="1_wt1c4"]
+[ext_resource type="Shader" uid="uid://do1woixulcs1b" path="res://Textures/Shaders/transparent_loader.gdshader" id="4_4xvlw"]
 [ext_resource type="Script" uid="uid://dfsmyb4773nc6" path="res://MenuAndLevels/register.gd" id="4_ndep8"]
+[ext_resource type="Texture2D" uid="uid://bcxy4mlt2ryqi" path="res://Textures/SystemVisuals/b_1.png" id="5_kpb7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31jox"]
 bg_color = Color(0.19614309, 0.19614312, 0.19614297, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qh8pa"]
+shader = ExtResource("4_4xvlw")
+shader_parameter/transparent_color = Color(1, 0, 1, 1)
+shader_parameter/tolerance = 0.01
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fkay"]
+atlas = ExtResource("5_kpb7k")
+region = Rect2(3, 3, 44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goag8"]
+atlas = ExtResource("5_kpb7k")
+region = Rect2(53, 3, 44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31lte"]
+atlas = ExtResource("5_kpb7k")
+region = Rect2(3, 53, 44, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld7mb"]
+atlas = ExtResource("5_kpb7k")
+region = Rect2(53, 53, 44, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2e6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fkay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goag8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31lte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld7mb")
+}],
+"loop": true,
+"name": &"loading",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6m4l"]
+size = Vector2(80, 71)
 
 [node name="OpenGame" type="Node2D"]
 script = ExtResource("1_wt1c4")
@@ -131,8 +177,23 @@ text = "● omagaaaad!!!!!!!"
 
 [node name="AddPlayer" type="HTTPRequest" parent="PlayerData"]
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(60, 585)
+[node name="Loader" type="CharacterBody2D" parent="."]
+visible = false
+texture_filter = 3
+position = Vector2(71, 592)
+
+[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="Loader"]
+texture_filter = 3
+material = SubResource("ShaderMaterial_qh8pa")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m2e6g")
+animation = &"loading"
+autoplay = "loading"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loader"]
+visible = false
+texture_filter = 3
+shape = SubResource("RectangleShape2D_a6m4l")
 
 [connection signal="button_down" from="PlayerData/SwitchOp" to="PlayerData" method="_on_switch_op_button_down"]
 [connection signal="button_down" from="PlayerData/ProcessInput" to="." method="_on_process_input_button_down"]
