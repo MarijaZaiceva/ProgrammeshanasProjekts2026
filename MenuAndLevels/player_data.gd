@@ -9,13 +9,17 @@ var operationRN = Operations.LOG_IN
 var valid_data := false
 var user_offline:=false
 
-@onready var switch_button:= get_tree().get_nodes_in_group("Buttons")[0]
-@onready var input_button:= get_tree().get_nodes_in_group("Buttons")[1]
+var switch_button:Button
+var input_button:Button
 var httpCheck:Node = null
 var httpAdd:Node = null
 
 var json
 
+func _ready() -> void:
+	if get_tree().get_nodes_in_group("Buttons")!=[]:
+		switch_button= get_tree().get_nodes_in_group("Buttons")[0]
+		input_button= get_tree().get_nodes_in_group("Buttons")[1]
 
 const url = "https://handheld-emporium-irate.ngrok-free.dev/"
 
