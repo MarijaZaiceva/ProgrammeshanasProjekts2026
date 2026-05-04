@@ -3,6 +3,14 @@ extends CharacterBody3D
 const SPEED = 30.0
 const JUMP_VELOCITY = 15
 
+func _ready() -> void:
+	set_physics_process(false)
+	Progress.managing_progress()
+	await SignalBus.settled_data
+	set_physics_process(true)
+	
+	
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.s
 	if not is_on_floor():

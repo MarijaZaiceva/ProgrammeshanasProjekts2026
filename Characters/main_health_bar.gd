@@ -28,6 +28,7 @@ func _on_get_damaged_bozo(damageRange:Array)->void:
 	else:
 		dead = true
 		print ('you\'re dead!')
+		Progress.managing=false
 		SceneLoader.load_scene(menu_path)
 	
 func get_health_bar()-> String:

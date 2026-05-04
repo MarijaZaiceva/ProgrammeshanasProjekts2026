@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_save_button_down() -> void:
-	Progress.save_progress("Bebra")
+	Progress.save_progress()
 	pass
 
 

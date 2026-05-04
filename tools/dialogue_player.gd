@@ -60,6 +60,7 @@ func start_talking_with_(num: int) -> void:
 	for l in full_script:
 		say(l["lineENG"])
 		await said_the_line
+	Progress.check_as_heard(num)
 	panel.set_visible(false)
 	is_talking = false	
 	
@@ -76,6 +77,7 @@ func get_dialogue_script(num:int) -> void:
 		get_full_script(num, line)
 		print(line)
 		await line_data_recieved
+		if user_offline: push_error ( "offline" )
 	if user_offline: push_error ( "offline" )
 	got_script.emit()
 	

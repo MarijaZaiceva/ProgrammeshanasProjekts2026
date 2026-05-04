@@ -165,11 +165,13 @@ func after_checking(results, response_code, headers, body):
 	match operationRN:
 		Operations.LOG_IN:
 			if json.has("username"):
+				Progress.playerID = json["id"]
 				valid_data = true
 		Operations.SIGN_IN:
 			if json.has("detail"):
 				valid_data = true
 			elif recheck and json.has("username"):
+				Progress.playerID = json["id"]
 				recheck = false
 				valid_data = true
 	server_responded.emit()

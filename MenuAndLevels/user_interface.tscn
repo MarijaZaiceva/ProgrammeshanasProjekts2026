@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r50r3kb7wjos"]
+[gd_scene load_steps=18 format=3 uid="uid://r50r3kb7wjos"]
 
 [ext_resource type="FontFile" uid="uid://behvo1w4sn2oo" path="res://Textures/Fonts/712_serif.ttf" id="1_a1fra"]
 [ext_resource type="Texture2D" uid="uid://c0yinwi2x3xxw" path="res://Textures/kenney_ui-pack-pixel-adventure/Large tiles/Thick outline/tile_0018.png" id="1_gsnfo"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://gu6hwif0g5pk" path="res://MenuAndLevels/options.gd" id="2_w60tg"]
 [ext_resource type="Texture2D" uid="uid://cvgq2gdx7s5yb" path="res://Textures/kenney_ui-pack-pixel-adventure/Large tiles/Thick outline/tile_0014.png" id="2_yo1wp"]
 [ext_resource type="Texture2D" uid="uid://balru8nyr1bjq" path="res://Textures/kenney_ui-pack-pixel-adventure/Large tiles/Thick outline/tile_0013.png" id="6_wgiai"]
+[ext_resource type="FontFile" uid="uid://crrrb2m33i528" path="res://Textures/Fonts/VPPixelPro-Outline.otf" id="8_4pdqs"]
+[ext_resource type="Script" uid="uid://b8d054sqrim2y" path="res://MenuAndLevels/spec_loading.gd" id="8_ei4xf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pm3qo"]
 
@@ -19,6 +21,45 @@ resource_name = "Speaker"
 _data = {
 &"Speaker": SubResource("Animation_t3yaw")
 }
+
+[sub_resource type="Animation" id="Animation_ei4xf"]
+resource_name = "when_data_is_loaded"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ply6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55cl1"]
+_data = {
+&"RESET": SubResource("Animation_ply6u"),
+&"when_data_is_loaded": SubResource("Animation_ei4xf")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp686"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -247,6 +288,41 @@ patch_margin_left = 16
 patch_margin_top = 11
 patch_margin_right = 11
 patch_margin_bottom = 16
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../SpecLoading")
+libraries = {
+&"": SubResource("AnimationLibrary_55cl1")
+}
+
+[node name="SpecLoading" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mp686")
+script = ExtResource("8_ei4xf")
+
+[node name="Label" type="Label" parent="CanvasLayer/SpecLoading"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_4pdqs")
+theme_override_font_sizes/font_size = 100
+text = "Loading data..."
 
 [connection signal="button_down" from="MenuButton" to="MenuButton" method="_on_button_down"]
 [connection signal="button_down" from="InventoryButton" to="InventoryButton" method="_on_button_down"]
