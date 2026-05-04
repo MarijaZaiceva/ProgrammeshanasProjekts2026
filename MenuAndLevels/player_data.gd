@@ -14,7 +14,11 @@ var input_button:Button
 var httpCheck:Node = null
 var httpAdd:Node = null
 
+var recheck = false # for signing in
+
 var json
+
+var playerID : int
 
 func _ready() -> void:
 	if get_tree().get_nodes_in_group("Buttons")!=[]:
@@ -126,6 +130,12 @@ func sign_in(usn:String, pas:String):
 	if valid_data: 
 		add_user(usn, pas)
 		await addition_completed
+		
+		recheck = true
+		check_player_existance(usn)
+		print("checked player existance, ")
+		await server_responded
+		
 		sign_in_done.emit()
 		return
 	sign_in_done.emit()
@@ -154,9 +164,14 @@ func after_checking(results, response_code, headers, body):
 		return
 	match operationRN:
 		Operations.LOG_IN:
-			if json.has("username"):valid_data = true
+			if json.has("username"):
+				valid_data = true
 		Operations.SIGN_IN:
-			if json.has("detail"):valid_data = true
+			if json.has("detail"):
+				valid_data = true
+			elif recheck and json.has("username"):
+				recheck = false
+				valid_data = true
 	server_responded.emit()
 	
 func after_adding(results, response_code, headers, body):

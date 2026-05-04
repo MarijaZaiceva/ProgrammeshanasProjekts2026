@@ -23,6 +23,8 @@ func _on_process_input_button_down() -> void:
 	loader.visible = false
 	
 	if player_data.valid_data:
+		player_data.playerID=player_data.json["id"]
+		print(player_data.playerID)
 		SceneLoader.load_scene(menu_path)
 	else:
 		error_area.visible=true
