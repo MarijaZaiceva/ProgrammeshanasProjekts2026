@@ -1,69 +1,33 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2o7pump7psm0"]
+[gd_scene load_steps=10 format=3 uid="uid://d2o7pump7psm0"]
 
 [ext_resource type="Script" uid="uid://bm3x2106cgagf" path="res://Characters/NPC/npc.gd" id="1_3pxal"]
-[ext_resource type="Texture2D" uid="uid://thal3ts2vbyu" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (1).png" id="2_soieu"]
-[ext_resource type="Texture2D" uid="uid://sshil4tmxdnl" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (2).png" id="3_g2deg"]
-[ext_resource type="Texture2D" uid="uid://cj1ehbisxcj30" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (3).png" id="4_pupaq"]
-[ext_resource type="Texture2D" uid="uid://dvts8luck3w5t" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (4).png" id="5_a1jxp"]
-[ext_resource type="Texture2D" uid="uid://dnhin4e0enlf" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (5).png" id="6_dkmtb"]
-[ext_resource type="Texture2D" uid="uid://bdtgouum12p65" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (6).png" id="7_3tg53"]
-[ext_resource type="Texture2D" uid="uid://br67cyfac8ux5" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (7).png" id="8_s44tw"]
-[ext_resource type="Texture2D" uid="uid://boalpacmef33b" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (8).png" id="9_s6vf6"]
-[ext_resource type="Texture2D" uid="uid://cph2pypapjm2m" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (9).png" id="10_0gnj1"]
-[ext_resource type="Texture2D" uid="uid://7ovh0e5ubppo" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (10).png" id="11_r1bm0"]
-[ext_resource type="Texture2D" uid="uid://beggy3sfaw2n7" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (11).png" id="12_w2sr5"]
-[ext_resource type="Texture2D" uid="uid://djjobsuhnwt7x" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (12).png" id="13_tkxdt"]
-[ext_resource type="Texture2D" uid="uid://bls0sp2teexp4" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (13).png" id="14_nt1oo"]
-[ext_resource type="Texture2D" uid="uid://b6joqm686p82i" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (14).png" id="15_7qvnh"]
-[ext_resource type="Texture2D" uid="uid://d777xjkre65e" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (15).png" id="16_24c86"]
+[ext_resource type="Texture2D" uid="uid://ds1g7tk5cmu3g" path="res://Textures/Character_sprites/guardian/sprite_guard (1).png" id="2_22bnb"]
+[ext_resource type="Texture2D" uid="uid://cnhy1ueu1mgi2" path="res://Textures/Character_sprites/guardian/sprite_guard (3).png" id="3_6nxvw"]
+[ext_resource type="Texture2D" uid="uid://bxwfvvxpb6veg" path="res://Textures/Character_sprites/guardian/sprite_guard (4).png" id="4_ei7rk"]
+[ext_resource type="Texture2D" uid="uid://d01yimefh0vkf" path="res://Textures/Character_sprites/guardian/sprite_guard (5).png" id="5_vc0t8"]
+[ext_resource type="Texture2D" uid="uid://b8wgtyc0sjfff" path="res://Textures/Character_sprites/guardian/sprite_guard (6).png" id="6_wn7xw"]
+[ext_resource type="Texture2D" uid="uid://b15gx6nw17io8" path="res://Textures/Character_sprites/guardian/sprite_guard (7).png" id="7_tvgsg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cofio"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_soieu")
+"texture": ExtResource("2_22bnb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g2deg")
+"texture": ExtResource("3_6nxvw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_pupaq")
+"texture": ExtResource("4_ei7rk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_a1jxp")
+"texture": ExtResource("5_vc0t8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_dkmtb")
+"texture": ExtResource("6_wn7xw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_3tg53")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_s44tw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_s6vf6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0gnj1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_r1bm0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_w2sr5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_tkxdt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_nt1oo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7qvnh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_24c86")
+"texture": ExtResource("7_tvgsg")
 }],
 "loop": true,
 "name": &"default",
@@ -84,6 +48,7 @@ billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cofio")
 autoplay = "default"
+frame_progress = 0.33697784
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)

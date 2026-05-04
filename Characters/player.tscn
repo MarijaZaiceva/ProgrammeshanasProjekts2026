@@ -1,7 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5uhtmtt532gk"]
 
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://Characters/player.gd" id="1_eovys"]
-[ext_resource type="Texture2D" uid="uid://cdjty0gnh56bv" path="res://Textures/Madjarski-razani-hleb.png" id="2_vb825"]
 [ext_resource type="Script" uid="uid://btwtbrjyod6kx" path="res://Characters/main_health_bar.gd" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
@@ -26,6 +25,29 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_vb825"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eovys"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"get_hit",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -72,6 +94,7 @@ mesh = SubResource("CylinderMesh_vb825")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
-[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+[node name="Sprite3D" type="AnimatedSprite3D" parent="MeshInstance3D"]
 billboard = 1
-texture = ExtResource("2_vb825")
+sprite_frames = SubResource("SpriteFrames_eovys")
+animation = &"get_hit"

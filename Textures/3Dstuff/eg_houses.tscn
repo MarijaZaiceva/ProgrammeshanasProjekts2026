@@ -4524,6 +4524,7 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_ld5gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1983237, 3.587173, -28.025837)
+visible = false
 
 [node name="lowpoly_egyptian_house_003" parent="." instance=ExtResource("4_vyobn")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
@@ -4539,6 +4540,7 @@ visible = false
 
 [node name="lowpoly_egyptian_house_006" type="Node3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+visible = false
 
 [node name="Cube_044" type="MeshInstance3D" parent="lowpoly_egyptian_house_006"]
 transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, 0.99999994, 0, -0.99999994, -1.1920929e-07, 0, 0, 0)

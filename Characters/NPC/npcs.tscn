@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c74gcbj3kvorc"]
+[gd_scene load_steps=5 format=3 uid="uid://c74gcbj3kvorc"]
 
 [ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="1_1mjun"]
 [ext_resource type="PackedScene" uid="uid://d0y0oa5o5ms6q" path="res://Characters/NPC/astronom_npc.tscn" id="2_0bb6t"]
 [ext_resource type="PackedScene" uid="uid://d2o7pump7psm0" path="res://Characters/NPC/guard_npc.tscn" id="3_3dakv"]
+[ext_resource type="PackedScene" uid="uid://bynq6dbru257d" path="res://Characters/NPC/merchant_npc.tscn" id="4_orps6"]
 
 [node name="NPCs" type="Node"]
 
 [node name="NPC" parent="." instance=ExtResource("1_1mjun")]
+visible = false
 
 [node name="astronom_npc" parent="." instance=ExtResource("2_0bb6t")]
 visible = false
 character_name = "Astronom"
 
 [node name="guard_npc" parent="." instance=ExtResource("3_3dakv")]
+visible = false
+
+[node name="merchant_npc" parent="." instance=ExtResource("4_orps6")]
+visible = false
