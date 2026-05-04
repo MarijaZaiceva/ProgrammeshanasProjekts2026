@@ -98,7 +98,7 @@ func httpSaveProg_request_completed(results, response_code, headers, body):
 	qurently_saving = false
 	return
 	
-func check_as_heard(num:int):
+func mark_as_heard(num:int):
 	if heard_already(num, PROGRESS["dialogues"]): return
 	PROGRESS["dialogues"] += 10**(num-1)
 	print(PROGRESS["dialogues"])
@@ -110,4 +110,6 @@ func heard_already(d:int, index:int):
 	print(controler2) 
 	var controler: int = index%controler2 - index%controler1
 	return controler > 0 
+	
+
 	

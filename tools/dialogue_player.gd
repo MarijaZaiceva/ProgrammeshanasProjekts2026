@@ -43,7 +43,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func start_talking_with_(num: int) -> void:
+func start_talking_(num: int) -> void:
 	#fullscript = get_fullscript(name, num)
 	if not loaded:
 		load_needed_things_pls()
@@ -60,7 +60,7 @@ func start_talking_with_(num: int) -> void:
 	for l in full_script:
 		say(l["lineENG"])
 		await said_the_line
-	Progress.check_as_heard(num)
+	Progress.mark_as_heard(num)
 	panel.set_visible(false)
 	is_talking = false	
 	
@@ -128,11 +128,6 @@ func httpLine_request_completed(results, response_code, headers, body):
 	line_data_recieved.emit()
 	
 	
-	
-	
-	
-	
-	
 func load_needed_things_pls() -> void:
 	panel = get_tree().get_nodes_in_group("SpeechPanel")[0]
 	textInside = get_tree().get_nodes_in_group("SpeechPanel")[1]
@@ -144,4 +139,9 @@ func say(words: String):
 	await get_tree().create_timer(1.5).timeout
 	textInside.text = ""
 	said_the_line.emit()
+	
+#the big fields
+
+func dialogue_aftermath(num):
+	pass
 	
