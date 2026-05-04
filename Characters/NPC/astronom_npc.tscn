@@ -1,7 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0y0oa5o5ms6q"]
+[gd_scene load_steps=19 format=3 uid="uid://d0y0oa5o5ms6q"]
 
 [ext_resource type="Script" uid="uid://bm3x2106cgagf" path="res://Characters/NPC/npc.gd" id="1_0smc7"]
-[ext_resource type="Texture2D" uid="uid://cvi4xjpe3xyj7" path="res://Textures/wise_cat.jpg" id="1_2w8hm"]
+[ext_resource type="Texture2D" uid="uid://thal3ts2vbyu" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (1).png" id="2_xgon7"]
+[ext_resource type="Texture2D" uid="uid://sshil4tmxdnl" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (2).png" id="3_gync1"]
+[ext_resource type="Texture2D" uid="uid://cj1ehbisxcj30" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (3).png" id="4_s1djw"]
+[ext_resource type="Texture2D" uid="uid://dvts8luck3w5t" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (4).png" id="5_5deyf"]
+[ext_resource type="Texture2D" uid="uid://dnhin4e0enlf" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (5).png" id="6_k3jom"]
+[ext_resource type="Texture2D" uid="uid://bdtgouum12p65" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (6).png" id="7_hjnep"]
+[ext_resource type="Texture2D" uid="uid://br67cyfac8ux5" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (7).png" id="8_sm6ap"]
+[ext_resource type="Texture2D" uid="uid://boalpacmef33b" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (8).png" id="9_6oiom"]
+[ext_resource type="Texture2D" uid="uid://cph2pypapjm2m" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (9).png" id="10_6vggt"]
+[ext_resource type="Texture2D" uid="uid://7ovh0e5ubppo" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (10).png" id="11_gy3b6"]
+[ext_resource type="Texture2D" uid="uid://beggy3sfaw2n7" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (11).png" id="12_y034j"]
+[ext_resource type="Texture2D" uid="uid://djjobsuhnwt7x" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (12).png" id="13_bmhjr"]
+[ext_resource type="Texture2D" uid="uid://bls0sp2teexp4" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (13).png" id="14_yctni"]
+[ext_resource type="Texture2D" uid="uid://b6joqm686p82i" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (14).png" id="15_m2mhm"]
+[ext_resource type="Texture2D" uid="uid://d777xjkre65e" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (15).png" id="16_5vk3q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73dat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xgon7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gync1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s1djw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5deyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k3jom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hjnep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sm6ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6oiom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6vggt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gy3b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y034j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bmhjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yctni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m2mhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5vk3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wx7hr"]
 size = Vector3(10.880586, 10.502563, 10.316781)
@@ -10,17 +77,21 @@ size = Vector3(10.880586, 10.502563, 10.316781)
 script = ExtResource("1_0smc7")
 metadata/_custom_type_script = "uid://bm3x2106cgagf"
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3931484, 0)
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.918936, 0)
+pixel_size = 0.12
 billboard = 2
-texture = ExtResource("1_2w8hm")
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_73dat")
+autoplay = "default"
+frame_progress = 0.109534055
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)
 shape = SubResource("BoxShape3D_wx7hr")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.032589, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.019999, 0)
 billboard = 1
 text = "Press \"Enter\" to chat"
 font_size = 300

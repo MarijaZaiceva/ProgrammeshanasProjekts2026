@@ -19,4 +19,5 @@ func _on_button_up() -> void:
 	print(inv.visible)
 		
 func items()->String:
-	return "some \nthings"
+	return ("Money: " + str(Progress.PROGRESS["money"])+"
+Weapon: " + str(Progress.PROGRESS["weapon"]))

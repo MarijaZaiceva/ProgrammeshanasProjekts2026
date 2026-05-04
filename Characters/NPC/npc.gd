@@ -7,8 +7,8 @@ enum States {IDLE,PLAYERNEAR}
 
 var stateRN = States.IDLE
 var visible_instruction: bool = false
-@export var character_name: String = "čau brāl"
-
+@export var character_name: String = "npc"
+@export var chronology: Array[int] = [1,2,3]
 const radius := 40
 
 func _ready() -> void:

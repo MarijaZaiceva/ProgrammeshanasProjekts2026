@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_t8jui"]
 [ext_resource type="MeshLibrary" uid="uid://cltf35ci4pmqa" path="res://possibleMeshLib/meshlib14.tres" id="3_324lf"]
-[ext_resource type="PackedScene" uid="uid://cblx50h6hqrj" path="res://Characters/NPC/npc.tscn" id="3_gyecu"]
 [ext_resource type="PackedScene" uid="uid://r50r3kb7wjos" path="res://MenuAndLevels/user_interface.tscn" id="3_t8jui"]
 [ext_resource type="Script" uid="uid://c8b0fl1t52xgq" path="res://MenuAndLevels/spawner.gd" id="4_t8jui"]
 [ext_resource type="Script" uid="uid://b8un2tdmjtddo" path="res://MenuAndLevels/borders.gd" id="5_t3yaw"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://comqcw46nw82x" path="res://Textures/3Dstuff/EXPORT_9_EGYPTIAN_HOUSES_PACK/PixelatedTextures/texture_16px 471.png" id="13_hxf5h"]
 [ext_resource type="Texture2D" uid="uid://c3lp0bjft3fdf" path="res://Textures/3Dstuff/EXPORT_9_EGYPTIAN_HOUSES_PACK/PixelatedTextures/texture_16px 292.png" id="14_43eiw"]
 [ext_resource type="Script" uid="uid://c8iikg6irmx5r" path="res://MenuAndLevels/devconsole.gd" id="15_4mqph"]
+[ext_resource type="PackedScene" uid="uid://d0y0oa5o5ms6q" path="res://Characters/NPC/astronom_npc.tscn" id="15_4tgpa"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_t8jui"]
 resource_local_to_scene = true
@@ -2715,10 +2715,6 @@ shadow_mesh = SubResource("ArrayMesh_t0ff4")
 [node name="Player" parent="." instance=ExtResource("1_t8jui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.722179, 6.1711483, 10.394287)
 
-[node name="NPC" parent="." instance=ExtResource("3_gyecu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.8313, 1.7436266, 48.763622)
-collision_layer = 3
-
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Environment"]
@@ -3291,3 +3287,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_qldrt")
 
 [node name="devconsole" type="Marker3D" parent="."]
 script = ExtResource("15_4mqph")
+
+[node name="astronom_npc" parent="." instance=ExtResource("15_4tgpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.74795, 1.4992485, 54.727146)
