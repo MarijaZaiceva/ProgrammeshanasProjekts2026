@@ -7,6 +7,7 @@ const ButtonGroups = ["LoginObjects","SigninObjects"]
 enum Operations {LOG_IN, SIGN_IN}
 var operationRN = Operations.LOG_IN
 var valid_data := false
+var user_offline:=false
 
 @onready var switch_button:= get_tree().get_nodes_in_group("Buttons")[0]
 @onready var input_button:= get_tree().get_nodes_in_group("Buttons")[1]
@@ -91,6 +92,7 @@ func valid ():
 			pas=hash_that_(pas)
 			sign_in(usn, pas)
 			await sign_in_done
+			print("sign in method through")
 			#result
 			SignalBus.got_news.emit()
 			return
@@ -120,11 +122,9 @@ func sign_in(usn:String, pas:String):
 	if valid_data: 
 		add_user(usn, pas)
 		await addition_completed
-		sign_in_done.emit
-		print("returned valid " + str(valid_data))
+		sign_in_done.emit()
 		return
-	print("returned invalid " + str(valid_data))
-	sign_in_done.emit
+	sign_in_done.emit()
 	
 func log_in(usn:String, pas:String):
 	await get_tree().create_timer(0.1).timeout
@@ -144,6 +144,10 @@ func after_checking(results, response_code, headers, body):
 	var json_string = body.get_string_from_utf8()
 	json = JSON.parse_string(json_string)
 	print (json)
+	if results > 0:
+		user_offline = true
+		server_responded.emit()
+		return
 	match operationRN:
 		Operations.LOG_IN:
 			if json.has("username"):valid_data = true
@@ -152,6 +156,9 @@ func after_checking(results, response_code, headers, body):
 	server_responded.emit()
 	
 func after_adding(results, response_code, headers, body):
+	if results > 0:
+		user_offline = true
+		addition_completed.emit()
 	var json_string = body.get_string_from_utf8()
 	json = JSON.parse_string(json_string)
 	print (json)
@@ -173,6 +180,7 @@ func add_user(usn, pas):
 
 
 func error () -> String:
+	if user_offline: return "● check your internet connection."
 	match operationRN:
 		Operations.LOG_IN:
 			return "● can't log in. Check for spelling mistakes."
