@@ -1,69 +1,61 @@
-[gd_scene load_steps=19 format=3 uid="uid://bynq6dbru257d"]
+[gd_scene load_steps=17 format=3 uid="uid://bynq6dbru257d"]
 
 [ext_resource type="Script" uid="uid://bm3x2106cgagf" path="res://Characters/NPC/npc.gd" id="1_to1d2"]
-[ext_resource type="Texture2D" uid="uid://thal3ts2vbyu" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (1).png" id="2_wsnim"]
-[ext_resource type="Texture2D" uid="uid://sshil4tmxdnl" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (2).png" id="3_3spwn"]
-[ext_resource type="Texture2D" uid="uid://cj1ehbisxcj30" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (3).png" id="4_to1tn"]
-[ext_resource type="Texture2D" uid="uid://dvts8luck3w5t" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (4).png" id="5_6oq8h"]
-[ext_resource type="Texture2D" uid="uid://dnhin4e0enlf" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (5).png" id="6_4gtop"]
-[ext_resource type="Texture2D" uid="uid://bdtgouum12p65" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (6).png" id="7_7sfeq"]
-[ext_resource type="Texture2D" uid="uid://br67cyfac8ux5" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (7).png" id="8_b0ybr"]
-[ext_resource type="Texture2D" uid="uid://boalpacmef33b" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (8).png" id="9_f2l6h"]
-[ext_resource type="Texture2D" uid="uid://cph2pypapjm2m" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (9).png" id="10_x51er"]
-[ext_resource type="Texture2D" uid="uid://7ovh0e5ubppo" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (10).png" id="11_8t8jm"]
-[ext_resource type="Texture2D" uid="uid://beggy3sfaw2n7" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (11).png" id="12_5c4qr"]
-[ext_resource type="Texture2D" uid="uid://djjobsuhnwt7x" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (12).png" id="13_6wfcy"]
-[ext_resource type="Texture2D" uid="uid://bls0sp2teexp4" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (13).png" id="14_ivav5"]
-[ext_resource type="Texture2D" uid="uid://b6joqm686p82i" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (14).png" id="15_xoxdv"]
-[ext_resource type="Texture2D" uid="uid://d777xjkre65e" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (15).png" id="16_pj3q0"]
+[ext_resource type="Texture2D" uid="uid://e1kro62pfwe5" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (1).png" id="2_rrwgf"]
+[ext_resource type="Texture2D" uid="uid://ds7fg3xu4ae3u" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (2).png" id="3_aurvf"]
+[ext_resource type="Texture2D" uid="uid://b4uxwj7ai83gu" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (3).png" id="4_wsnim"]
+[ext_resource type="Texture2D" uid="uid://bfic875mpoxch" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (4).png" id="5_3spwn"]
+[ext_resource type="Texture2D" uid="uid://sdqdr07sbwfq" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (5).png" id="6_to1tn"]
+[ext_resource type="Texture2D" uid="uid://brgkkk0ypmsmd" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (6).png" id="7_6oq8h"]
+[ext_resource type="Texture2D" uid="uid://c65ckmodtrxc" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (7).png" id="8_4gtop"]
+[ext_resource type="Texture2D" uid="uid://da40qrpi0tq06" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (8).png" id="9_7sfeq"]
+[ext_resource type="Texture2D" uid="uid://egig3in746bo" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (9).png" id="10_b0ybr"]
+[ext_resource type="Texture2D" uid="uid://bvyqsp1t6apv3" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (10).png" id="11_f2l6h"]
+[ext_resource type="Texture2D" uid="uid://dcthq00xkuqn6" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (11).png" id="12_x51er"]
+[ext_resource type="Texture2D" uid="uid://dy0pf21yg2ggg" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (12).png" id="13_8t8jm"]
+[ext_resource type="Texture2D" uid="uid://kxhueohro5qh" path="res://Textures/Character_sprites/merchant/sprite_merchant_idle (13).png" id="14_5c4qr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15q4o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wsnim")
+"texture": ExtResource("2_rrwgf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_3spwn")
+"texture": ExtResource("3_aurvf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_to1tn")
+"texture": ExtResource("4_wsnim")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6oq8h")
+"texture": ExtResource("5_3spwn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_4gtop")
+"texture": ExtResource("6_to1tn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_7sfeq")
+"texture": ExtResource("7_6oq8h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_b0ybr")
+"texture": ExtResource("8_4gtop")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_f2l6h")
+"texture": ExtResource("9_7sfeq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_x51er")
+"texture": ExtResource("10_b0ybr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_8t8jm")
+"texture": ExtResource("11_f2l6h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5c4qr")
+"texture": ExtResource("12_x51er")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_6wfcy")
+"texture": ExtResource("13_8t8jm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_ivav5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_xoxdv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_pj3q0")
+"texture": ExtResource("14_5c4qr")
 }],
 "loop": true,
 "name": &"default",
@@ -84,6 +76,7 @@ billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_15q4o")
 autoplay = "default"
+frame_progress = 0.88370955
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)

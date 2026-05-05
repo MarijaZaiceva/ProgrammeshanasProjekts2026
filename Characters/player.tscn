@@ -272,9 +272,8 @@ pixel_size = 0.1
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_eovys")
-animation = &"attack"
 autoplay = "default"
-frame_progress = 0.9045984
+frame_progress = 0.21312173
 
 [node name="Camera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2750163, 0)

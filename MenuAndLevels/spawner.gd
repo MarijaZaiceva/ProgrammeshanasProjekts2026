@@ -1,6 +1,6 @@
-extends Marker3D
+class_name spawner extends Marker3D
 
-var spawn_mob: PackedScene = preload(Constants.GET_CHARACTER.monster_thing)
+@export var spawn_mob: PackedScene = preload(Constants.GET_CHARACTER.monster_thing)
 const spawn_rad := 15
 
 # Called when the node enters the scene tree for the first time.
