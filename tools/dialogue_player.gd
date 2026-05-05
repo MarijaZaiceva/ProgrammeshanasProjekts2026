@@ -66,6 +66,9 @@ func start_talking_(num: int) -> void:
 	for l in full_script:
 		say(l["lineENG"])
 		await said_the_line
+		if l["choiceID"]!= null:
+			SignalBus.emit_signal("create_choice", options)
+			await SignalBus.made_choice
 	Progress.mark_as_heard(num)
 	panel.set_visible(false)
 	is_talking = false	

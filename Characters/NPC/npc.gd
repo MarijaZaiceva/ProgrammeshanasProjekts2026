@@ -8,6 +8,7 @@ enum States {IDLE,PLAYERNEAR}
 var stateRN = States.IDLE
 var visible_instruction: bool = false
 @export var character_name: String = "npc"
+@export var dialID: int = 1
 @export var chronology: Array[int] = [1,2,3]
 const radius := 40
 
@@ -16,7 +17,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interract") and _player_near():
-		DialoguePlayer.start_talking_(1)
+		DialoguePlayer.start_talking_(dialID)
 	match stateRN:
 		States.IDLE:
 			if _player_near() and not visible_instruction:

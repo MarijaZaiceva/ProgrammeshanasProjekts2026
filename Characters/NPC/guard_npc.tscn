@@ -39,6 +39,7 @@ size = Vector3(20.387627, 10.502563, 10.316781)
 
 [node name="guard_npc" type="StaticBody3D"]
 script = ExtResource("1_3pxal")
+dialID = 2
 metadata/_custom_type_script = "uid://bm3x2106cgagf"
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]

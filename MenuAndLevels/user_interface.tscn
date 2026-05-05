@@ -289,7 +289,7 @@ patch_margin_top = 11
 patch_margin_right = 11
 patch_margin_bottom = 16
 
-[node name="DialogueOptions2" type="MenuButton" parent="." groups=["Options"]]
+[node name="DialogueOptions" type="MenuButton" parent="." groups=["Options"]]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -305,7 +305,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_w60tg")
 
-[node name="Opt1" type="Button" parent="DialogueOptions2"]
+[node name="Opt1" type="Button" parent="DialogueOptions" groups=["DialOptions"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.123641305
@@ -322,7 +322,7 @@ theme_override_font_sizes/font_size = 64
 text = "Return"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions2/Opt1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions/Opt1"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -336,7 +336,7 @@ patch_margin_top = 11
 patch_margin_right = 11
 patch_margin_bottom = 16
 
-[node name="Opt2" type="Button" parent="DialogueOptions2"]
+[node name="Opt2" type="Button" parent="DialogueOptions" groups=["DialOptions"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.123641305
@@ -353,7 +353,7 @@ theme_override_font_sizes/font_size = 64
 text = "Save"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions2/Opt2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions/Opt2"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -367,7 +367,7 @@ patch_margin_top = 11
 patch_margin_right = 11
 patch_margin_bottom = 16
 
-[node name="Opt3" type="Button" parent="DialogueOptions2"]
+[node name="Opt3" type="Button" parent="DialogueOptions" groups=["DialOptions"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.123641305
@@ -384,7 +384,7 @@ theme_override_font_sizes/font_size = 64
 text = "Quit"
 flat = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions2/Opt3"]
+[node name="NinePatchRect" type="NinePatchRect" parent="DialogueOptions/Opt3"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -400,7 +400,6 @@ patch_margin_bottom = 16
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../SpecLoading")
@@ -440,5 +439,6 @@ text = "Loading data..."
 [connection signal="button_down" from="Options/Return" to="MenuButton" method="_on_return_button_down"]
 [connection signal="button_down" from="Options/Save" to="Options" method="_on_save_button_down"]
 [connection signal="button_down" from="Options/Quit" to="Options" method="_on_quit_button_down"]
-[connection signal="button_down" from="DialogueOptions2/Opt2" to="DialogueOptions2" method="_on_save_button_down"]
-[connection signal="button_down" from="DialogueOptions2/Opt3" to="DialogueOptions2" method="_on_quit_button_down"]
+[connection signal="button_down" from="DialogueOptions/Opt1" to="DialogueOptions" method="_on_opt_1_button_down"]
+[connection signal="button_down" from="DialogueOptions/Opt2" to="DialogueOptions" method="_on_opt_2_button_down"]
+[connection signal="button_down" from="DialogueOptions/Opt3" to="DialogueOptions" method="_on_opt_3_button_down"]
