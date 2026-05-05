@@ -26,8 +26,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.s
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2.5
-	
-	if is_on_floor():
+	else:
 		new_action=Action.STILL
 	
 	if (velocity.x!=0 or velocity.z!=0) and is_on_floor():
@@ -59,6 +58,7 @@ func _physics_process(delta: float) -> void:
 		ap.flip_h = false
 	move_and_slide()
 	if Input.is_action_just_pressed("attack"):
+		damaged = false
 		attacking = true
 		new_action = Action.ATTACKING
 	
@@ -79,6 +79,6 @@ func change_animation(n_a)->void:
 			ap.play("walk")
 		Action.DAMAGED:
 			ap.play("get_hit")
-			if is_on_floor(): velocity.y = JUMP_VELOCITY
+			if is_on_floor(): velocity.y = JUMP_VELOCITY/2
 		Action.ATTACKING:
 			ap.play("attack")

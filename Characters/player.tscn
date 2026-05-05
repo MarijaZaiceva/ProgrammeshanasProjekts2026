@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b5uhtmtt532gk"]
+[gd_scene load_steps=60 format=3 uid="uid://b5uhtmtt532gk"]
 
 [ext_resource type="Script" uid="uid://cae5cp01jof4c" path="res://Characters/player.gd" id="1_eovys"]
 [ext_resource type="Texture2D" uid="uid://bvv2nhcltwsvm" path="res://Textures/Character_sprites/prince/idle_prince/sprite (1).png" id="3_4heda"]
@@ -17,19 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bqffbo062fa3b" path="res://Textures/Character_sprites/prince/idle_prince/sprite.png" id="11_foksl"]
 [ext_resource type="Texture2D" uid="uid://c7yuhxgiu4ske" path="res://Textures/Character_sprites/prince/attack2/sprite_attack2 (9).png" id="11_xxm4w"]
 [ext_resource type="Texture2D" uid="uid://dn6ssh06cjooo" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (1).png" id="12_0dcce"]
-[ext_resource type="Texture2D" uid="uid://cpm3bfqayoyh0" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (2).png" id="13_go50p"]
 [ext_resource type="Texture2D" uid="uid://dqhnibd03tm3h" path="res://Textures/Character_sprites/prince/attack2/sprite_attack2 (11).png" id="13_pjl1y"]
 [ext_resource type="Texture2D" uid="uid://bw3uceng53lpw" path="res://Textures/Character_sprites/prince/attack2/sprite_attack2 (12).png" id="14_5wbyn"]
-[ext_resource type="Texture2D" uid="uid://bs7be3kginobo" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (3).png" id="14_puhia"]
-[ext_resource type="Texture2D" uid="uid://eakk6208t4bt" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (4).png" id="15_6a624"]
 [ext_resource type="Texture2D" uid="uid://bimc5n47xgiio" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (5).png" id="16_oxvfy"]
-[ext_resource type="Texture2D" uid="uid://b3l5x6pr8j4a1" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (6).png" id="17_fystd"]
-[ext_resource type="Texture2D" uid="uid://cddftinuyp1h6" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (7).png" id="18_4nybn"]
-[ext_resource type="Texture2D" uid="uid://bq3csuq7pfewn" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (8).png" id="19_g4s3d"]
 [ext_resource type="Texture2D" uid="uid://dgpfpyneapuv8" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (9).png" id="20_qvkkl"]
-[ext_resource type="Texture2D" uid="uid://ndhgn6qej8p6" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (10).png" id="21_m5nbj"]
 [ext_resource type="Texture2D" uid="uid://3bjfe5laodo3" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (11).png" id="22_yq7ba"]
-[ext_resource type="Texture2D" uid="uid://eb88of02gdki" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (12).png" id="23_slj42"]
 [ext_resource type="Texture2D" uid="uid://cy4qg0h68r1x8" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak (13).png" id="24_xd1xy"]
 [ext_resource type="Texture2D" uid="uid://hxjvn8pvel40" path="res://Textures/Character_sprites/prince/weak_prince/sprite_weak.png" id="25_8sfs3"]
 [ext_resource type="Texture2D" uid="uid://bmx8xvyap6yq0" path="res://Textures/Character_sprites/prince/jump/sprite_jump (1).png" id="33_ay010"]
@@ -150,37 +142,13 @@ animations = [{
 "texture": ExtResource("12_0dcce")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_go50p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_puhia")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_6a624")
-}, {
-"duration": 1.0,
 "texture": ExtResource("16_oxvfy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_fystd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_4nybn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_g4s3d")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_qvkkl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_m5nbj")
-}, {
-"duration": 1.0,
 "texture": ExtResource("22_yq7ba")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_slj42")
 }, {
 "duration": 1.0,
 "texture": ExtResource("24_xd1xy")
@@ -339,6 +307,8 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_eovys")
 animation = &"get_hit"
 autoplay = "default"
+frame = 5
+frame_progress = 1.0
 
 [node name="Camera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2750163, 0)

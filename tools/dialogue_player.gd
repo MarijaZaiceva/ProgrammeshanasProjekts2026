@@ -15,6 +15,7 @@ signal said_the_line
 
 var httpDial : HTTPRequest
 var httpLine : HTTPRequest
+var httpChoice : HTTPRequest
 
 var firstline:int
 var line:int
@@ -33,12 +34,14 @@ var full_script:Array
 func _ready() -> void:
 	httpDial = HTTPRequest.new()
 	httpLine = HTTPRequest.new()
+	httpChoice = HTTPRequest.new()
 	add_child(httpDial)
 	add_child(httpLine)
+	add_child(httpChoice)
 	httpDial.request_completed.connect(self.httpDial_request_completed)
 	httpLine.request_completed.connect(self.httpLine_request_completed)
-
-
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -140,7 +143,16 @@ func say(words: String):
 	textInside.text = ""
 	said_the_line.emit()
 	
-#the big fields
+func get_choice_data(id)->void:
+	await get_tree().create_timer(0.01).timeout
+	var newurl = url + "choices/" + id
+	print(newurl)
+	var headers = ["Content-Type: application/json"]
+	httpDial.request(newurl, headers, HTTPClient.METHOD_GET)
+	
+func httpChoice_request_completed(results, response_code, headers, body):
+	pass
+
 
 func dialogue_aftermath(num):
 	pass
