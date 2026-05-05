@@ -51,12 +51,14 @@ func _process(_delta: float) -> void:
 
 func start_talking_(num: int) -> void:
 	#fullscript = get_fullscript(name, num)
+	if panel!=null and textInside !=null: 
+		loaded = true
 	if not loaded:
 		load_needed_things_pls()
 		loaded = true
 	if is_talking:
 		return
-	panel.set_visible(true)
+ 	panel.set_visible(true)
 	is_talking = true
 	get_dialogue_script(num)
 	await got_script
@@ -153,7 +155,8 @@ func say(words: String):
 		await get_tree().create_timer(0.05).timeout
 		textInside.text = textInside.text+letter
 	await get_tree().create_timer(1.5).timeout
-	textInside.text = ""
+	if textInside:
+		textInside.text = ""
 	said_the_line.emit()
 	
 func get_options(id)->void:

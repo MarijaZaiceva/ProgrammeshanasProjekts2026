@@ -4077,6 +4077,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n7o8x")
 
 [node name="merchant_npc" parent="NPCs" instance=ExtResource("15_sahug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349.22348, 0, 359.92197)
+dialID = 10
 
 [node name="astronom_npc" parent="NPCs" instance=ExtResource("15_4tgpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225.64305, 1.4992485, 350.74)

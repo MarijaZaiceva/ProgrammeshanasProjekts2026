@@ -77,6 +77,7 @@ func save_progress ():
 	if qurently_saving:return
 	qurently_saving = true
 	print("saving")
+	if len(get_tree().get_nodes_in_group("Player")) == 0: return
 	var player = get_tree().get_nodes_in_group("Player")[0]
 	if player == null: push_error("the system is fucked upp bro")
 	p["position_x"]=player.global_position.x

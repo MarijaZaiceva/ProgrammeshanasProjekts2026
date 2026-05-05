@@ -152,7 +152,7 @@ offset_left = 281.0
 offset_top = 275.0
 offset_right = 343.0
 offset_bottom = 304.0
-text = "Sign in"
+text = "Sign up"
 
 [node name="Label" type="Label" parent="PlayerData/SwitchOp"]
 layout_mode = 0

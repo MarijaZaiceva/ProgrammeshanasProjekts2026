@@ -2,7 +2,7 @@ extends Panel
 
 var hasher := HashingContext.new()
 
-const ButtonText = ["Log in", "Sign in"]
+const ButtonText = ["Log in", "Sign up"]
 const ButtonGroups = ["LoginObjects","SigninObjects"]
 enum Operations {LOG_IN, SIGN_IN}
 var operationRN = Operations.LOG_IN
