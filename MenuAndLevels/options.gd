@@ -11,11 +11,15 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_save_button_down() -> void:
-	Progress.save_progress()
-	pass
 
 
-func _on_quit_button_down() -> void:
-	SceneLoader.load_scene(menu_path)
+func _on_opt_1_button_down() -> void:
+	pass # Replace with function body.
+
+
+func _on_opt_2_button_down() -> void:
+	pass # Replace with function body.
+
+
+func _on_opt_3_button_down() -> void:
 	pass # Replace with function body.

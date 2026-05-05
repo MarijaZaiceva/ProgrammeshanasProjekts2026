@@ -12,6 +12,7 @@ signal got_script
 signal got_dd
 signal line_data_recieved
 signal said_the_line
+signal got_options
 
 var httpDial : HTTPRequest
 var httpLine : HTTPRequest
@@ -23,6 +24,7 @@ var nextline:int
 var collecting_data:bool=true
 
 var full_script:Array
+var options:Array
 #var json : JSON
 #var res
 #var urlbase : String = "https://handheld-emporium-irate.ngrok-free.dev/"
@@ -40,6 +42,7 @@ func _ready() -> void:
 	add_child(httpChoice)
 	httpDial.request_completed.connect(self.httpDial_request_completed)
 	httpLine.request_completed.connect(self.httpLine_request_completed)
+	httpChoice.request_completed.connect(self.httpChoice_request_completed)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -126,6 +129,12 @@ func httpLine_request_completed(results, response_code, headers, body):
 	print (json)
 	if json.has('detail'): push_error('line doesn\'t exist')
 	line = json["nextLine"]
+	
+	if json["choiceID"]!=null:
+		get_options(json["choiceID"])
+		await got_options
+		if user_offline: push_error('offline!')
+	
 	if line == firstline : collecting_data = false
 	full_script.append(json)
 	line_data_recieved.emit()
@@ -143,7 +152,7 @@ func say(words: String):
 	textInside.text = ""
 	said_the_line.emit()
 	
-func get_choice_data(id)->void:
+func get_options(id)->void:
 	await get_tree().create_timer(0.01).timeout
 	var newurl = url + "choices/" + id
 	print(newurl)
@@ -151,7 +160,18 @@ func get_choice_data(id)->void:
 	httpDial.request(newurl, headers, HTTPClient.METHOD_GET)
 	
 func httpChoice_request_completed(results, response_code, headers, body):
-	pass
+	if results > 0: #offline
+		user_offline = true
+		collecting_data = false
+		got_options.emit()
+		return
+	var json_string = body.get_string_from_utf8()
+	var json = JSON.parse_string(json_string) #extracting json
+	print (json)
+	if json.has('detail'): push_error('choice doesn\'t exist')
+	line = json["nextLine"]
+	options = [json["cru"],json["opt1"],json["opt2"],json["opt3"]]
+	got_options.emit()
 
 
 func dialogue_aftermath(num):

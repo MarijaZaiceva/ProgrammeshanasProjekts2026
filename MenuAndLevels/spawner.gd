@@ -29,6 +29,5 @@ func spawn_() -> void:
 func johny_pls_respawn(time: float, sid:int) ->void:
 	if sid != spawnerId: 
 		return
-	print("equal")
 	await get_tree().create_timer(time).timeout
 	spawn_()
