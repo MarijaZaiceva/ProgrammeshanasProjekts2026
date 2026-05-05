@@ -41,14 +41,13 @@ script = ExtResource("2_04f0x")
 health = 60.0
 dealt_damage = 10.0
 respawn_in = 30.0
+max_money = 10
 metadata/_custom_type_script = "uid://q7p7n0ix62rv"
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
 layers = 3
-cast_shadow = 0
 modulate = Color(0.6956395, 0.24376363, 0.29191217, 1)
 billboard = 1
-shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_7opx5")

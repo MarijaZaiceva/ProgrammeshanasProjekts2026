@@ -5,3 +5,4 @@
 [node name="Spawner1" type="Marker3D"]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 script = ExtResource("1_ygupa")
+max = 7

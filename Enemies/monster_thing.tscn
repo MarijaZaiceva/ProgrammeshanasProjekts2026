@@ -44,8 +44,6 @@ script = ExtResource("3_sl5sm")
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
 layers = 3
-cast_shadow = 0
 billboard = 1
-shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_6e265")

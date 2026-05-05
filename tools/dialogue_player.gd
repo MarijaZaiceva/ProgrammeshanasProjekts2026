@@ -121,7 +121,7 @@ func httpLine_request_completed(results, response_code, headers, body):
 	var json_string = body.get_string_from_utf8()
 	var json = JSON.parse_string(json_string) #extracting json
 	print (json)
-	if json.has('details'): push_error('line doesn\'t exist')
+	if json.has('detail'): push_error('line doesn\'t exist')
 	line = json["nextLine"]
 	if line == firstline : collecting_data = false
 	full_script.append(json)
