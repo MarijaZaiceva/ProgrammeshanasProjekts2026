@@ -78,8 +78,8 @@ script = ExtResource("1_0smc7")
 metadata/_custom_type_script = "uid://bm3x2106cgagf"
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.918936, 0)
-pixel_size = 0.12
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9649506, 0)
+pixel_size = 0.1
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_73dat")

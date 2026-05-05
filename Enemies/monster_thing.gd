@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Monster extends CharacterBody3D
 
 var spawn_position: Vector3
 var direction: Vector3 = Vector3.ZERO
@@ -12,10 +12,10 @@ const recieving_attack_zone := 8
 const detection_radius := 50.0
 const attack_radius := 15
 const wander_radius := 40
-const wander_speed := 5
-const attack_speed := 30 
-const chase_speed := 25
-const strength :=[5, 12]
+@export var wander_speed := 5
+@export var chase_speed := 25
+@export var attack_speed := 30 
+@export var strength :=[5, 12]
 
 @onready var agent : NavigationAgent3D = $NavigationAgent3D
 

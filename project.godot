@@ -35,7 +35,7 @@ PlayerData="*res://MenuAndLevels/player_data.gd"
 
 window/size/viewport_width=1167
 window/size/viewport_height=658
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor]
 

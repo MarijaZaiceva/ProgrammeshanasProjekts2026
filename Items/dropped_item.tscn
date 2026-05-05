@@ -1,7 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1qvyff2vo68f"]
+[gd_scene load_steps=11 format=3 uid="uid://d1qvyff2vo68f"]
 
 [ext_resource type="Script" uid="uid://csvp4dce76kfm" path="res://MenuAndLevels/dropped_item.gd" id="1_j5gjo"]
-[ext_resource type="Texture2D" uid="uid://gpjqowiqt5af" path="res://Textures/planet-svgrepo-com.svg" id="2_esv86"]
+[ext_resource type="Texture2D" uid="uid://b8ptqv20edd3y" path="res://Textures/Character_sprites/df9mc4c-c75b87eb-9ec7-47fe-98e6-d0e9b578ed68.png" id="2_j5gjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esv86"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(3, 0, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5gjo"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(103, 0, 100, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4br4l"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(204, 0, 100, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s32gu"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(303, 0, 88, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlmpr"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(397, 0, 88, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnq4h"]
+atlas = ExtResource("2_j5gjo")
+region = Rect2(503, 0, 78, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qrnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esv86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5gjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4br4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s32gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlmpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnq4h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gyecu"]
 height = 7.2230225
@@ -12,10 +62,15 @@ collision_layer = 8
 collision_mask = 11
 script = ExtResource("1_j5gjo")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.157139, 0)
+modulate = Color(0.83467704, 0.71055055, 0.45285296, 1)
+pixel_size = 0.1
 billboard = 1
-texture = ExtResource("2_esv86")
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_6qrnh")
+autoplay = "default"
+frame_progress = 0.19330278
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 9

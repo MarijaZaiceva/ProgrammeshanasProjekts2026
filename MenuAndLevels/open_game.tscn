@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://doel5qp1fesx8"]
+[gd_scene load_steps=15 format=3 uid="uid://doel5qp1fesx8"]
 
 [ext_resource type="Script" uid="uid://cwbttind8nqd7" path="res://MenuAndLevels/player_data.gd" id="1_u78i8"]
 [ext_resource type="Script" uid="uid://2th3kthrg4qs" path="res://MenuAndLevels/open_game.gd" id="1_wt1c4"]
 [ext_resource type="Shader" uid="uid://do1woixulcs1b" path="res://Textures/Shaders/transparent_loader.gdshader" id="4_4xvlw"]
+[ext_resource type="Texture2D" uid="uid://c68p5dlq7bivl" path="res://Textures/kenney_ui-pack-pixel-adventure/Large tiles/Thick outline/tile_0002.png" id="4_kpb7k"]
 [ext_resource type="Script" uid="uid://dfsmyb4773nc6" path="res://MenuAndLevels/register.gd" id="4_ndep8"]
 [ext_resource type="Texture2D" uid="uid://bcxy4mlt2ryqi" path="res://Textures/SystemVisuals/b_1.png" id="5_kpb7k"]
 
@@ -77,7 +78,7 @@ offset_bottom = -477.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Username" type="TextEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
+[node name="Username" type="LineEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
 z_index = 1
 layout_mode = 0
 offset_left = 441.0
@@ -86,7 +87,7 @@ offset_right = 708.0
 offset_bottom = 310.0
 placeholder_text = "Tudasuda2007"
 
-[node name="Password" type="TextEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
+[node name="Password" type="LineEdit" parent="PlayerData/Login" groups=["LoginObjects"]]
 process_priority = 1
 z_index = 1
 layout_mode = 0
@@ -95,6 +96,8 @@ offset_top = 336.0
 offset_right = 708.0
 offset_bottom = 384.0
 placeholder_text = "not1234!"
+secret = true
+secret_character = "★"
 
 [node name="Register" type="Control" parent="PlayerData"]
 layout_mode = 1
@@ -107,7 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_ndep8")
 
-[node name="NewUsername" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
+[node name="NewUsername" type="LineEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -117,7 +120,7 @@ offset_right = 314.0
 offset_bottom = 117.0
 placeholder_text = "Tudasuda2007"
 
-[node name="NewPassword" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
+[node name="NewPassword" type="LineEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
 visible = false
 z_index = 1
@@ -127,8 +130,10 @@ offset_top = 139.0
 offset_right = 315.0
 offset_bottom = 187.0
 placeholder_text = "not1234!"
+secret = true
+secret_character = "★"
 
-[node name="NewPassword2" type="TextEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
+[node name="NewPassword2" type="LineEdit" parent="PlayerData/Register" groups=["SigninObjects"]]
 process_priority = 1
 visible = false
 z_index = 1
@@ -138,6 +143,8 @@ offset_top = 212.0
 offset_right = 315.0
 offset_bottom = 260.0
 placeholder_text = "not1234!"
+secret = true
+secret_character = "★"
 
 [node name="SwitchOp" type="Button" parent="PlayerData" groups=["Buttons"]]
 layout_mode = 0
@@ -163,6 +170,14 @@ offset_right = 213.0
 offset_bottom = 305.0
 text = "Log in"
 
+[node name="NinePatchRect" type="NinePatchRect" parent="PlayerData/ProcessInput"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Error" type="Label" parent="PlayerData"]
 visible = false
 modulate = Color(1, 0.1882353, 0.34117648, 1)
@@ -176,6 +191,21 @@ text = "● omagaaaad!!!!!!!"
 [node name="CheckPlayer" type="HTTPRequest" parent="PlayerData"]
 
 [node name="AddPlayer" type="HTTPRequest" parent="PlayerData"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PlayerData"]
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kpb7k")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
 
 [node name="Loader" type="CharacterBody2D" parent="."]
 visible = false
