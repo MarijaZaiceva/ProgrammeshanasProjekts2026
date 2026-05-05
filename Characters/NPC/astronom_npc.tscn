@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0y0oa5o5ms6q"]
+[gd_scene load_steps=77 format=3 uid="uid://d0y0oa5o5ms6q"]
 
 [ext_resource type="Script" uid="uid://bm3x2106cgagf" path="res://Characters/NPC/npc.gd" id="1_0smc7"]
 [ext_resource type="Texture2D" uid="uid://thal3ts2vbyu" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (1).png" id="2_xgon7"]
@@ -16,6 +16,64 @@
 [ext_resource type="Texture2D" uid="uid://bls0sp2teexp4" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (13).png" id="14_yctni"]
 [ext_resource type="Texture2D" uid="uid://b6joqm686p82i" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (14).png" id="15_m2mhm"]
 [ext_resource type="Texture2D" uid="uid://d777xjkre65e" path="res://Textures/Character_sprites/astronomer/sprite_astro_idle (15).png" id="16_5vk3q"]
+[ext_resource type="Texture2D" uid="uid://bddbu1ky1r2r5" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (1).png" id="17_aebhh"]
+[ext_resource type="Texture2D" uid="uid://c7t1it2ckm2nq" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (2).png" id="18_kwxgt"]
+[ext_resource type="Texture2D" uid="uid://dhtjabgkwm0gi" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (3).png" id="19_2ltus"]
+[ext_resource type="Texture2D" uid="uid://16esfvixn1x5" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (4).png" id="20_s14of"]
+[ext_resource type="Texture2D" uid="uid://dok63jdyju3gh" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (5).png" id="21_fu3fc"]
+[ext_resource type="Texture2D" uid="uid://cdaenp1vrbudj" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (6).png" id="22_hcj61"]
+[ext_resource type="Texture2D" uid="uid://tywbh3jbqul8" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (7).png" id="23_op2k0"]
+[ext_resource type="Texture2D" uid="uid://p44ry77pt0lt" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (8).png" id="24_ytu7n"]
+[ext_resource type="Texture2D" uid="uid://c5mw0p1ve7a6j" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (9).png" id="25_0kq6h"]
+[ext_resource type="Texture2D" uid="uid://damrsg2h0dmxh" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (10).png" id="26_nsbj4"]
+[ext_resource type="Texture2D" uid="uid://c5dbosjhimg3o" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (11).png" id="27_e1oeb"]
+[ext_resource type="Texture2D" uid="uid://c7t7uqfwsasau" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (12).png" id="28_psvus"]
+[ext_resource type="Texture2D" uid="uid://hi51h0egv4nl" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (13).png" id="29_hxmih"]
+[ext_resource type="Texture2D" uid="uid://df7u5f3yelset" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (14).png" id="30_gf72a"]
+[ext_resource type="Texture2D" uid="uid://bnbyw2n2i43sy" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (15).png" id="31_8ilne"]
+[ext_resource type="Texture2D" uid="uid://m1nwwehfornm" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (16).png" id="32_p1kug"]
+[ext_resource type="Texture2D" uid="uid://rdtyccg0wq3a" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (17).png" id="33_0tpj4"]
+[ext_resource type="Texture2D" uid="uid://tmd3q3n0kgu4" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (18).png" id="34_s2cbc"]
+[ext_resource type="Texture2D" uid="uid://3xtouorcyifb" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (19).png" id="35_mn8kx"]
+[ext_resource type="Texture2D" uid="uid://7tu0vmvnam4o" path="res://Textures/Character_sprites/astronomer/astronomer_merchant/sprite_astroMerchant (20).png" id="36_wcyxg"]
+[ext_resource type="Texture2D" uid="uid://bamuahgxdktuk" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (1).png" id="37_iqrm4"]
+[ext_resource type="Texture2D" uid="uid://o1jh0k7irdmn" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (2).png" id="38_dwjdb"]
+[ext_resource type="Texture2D" uid="uid://cuj30x62252ac" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (3).png" id="39_moncm"]
+[ext_resource type="Texture2D" uid="uid://cpl1fn580pra8" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (4).png" id="40_r4n2s"]
+[ext_resource type="Texture2D" uid="uid://ka3nhu1qa5x7" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (5).png" id="41_2oabh"]
+[ext_resource type="Texture2D" uid="uid://c6y7fv0btxatt" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (6).png" id="42_oabfe"]
+[ext_resource type="Texture2D" uid="uid://2ualoxou1smq" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (7).png" id="43_v7gwt"]
+[ext_resource type="Texture2D" uid="uid://kln0xpyetc8x" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (8).png" id="44_8r52j"]
+[ext_resource type="Texture2D" uid="uid://bgtj8bjr486fw" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (9).png" id="45_k7n8i"]
+[ext_resource type="Texture2D" uid="uid://bkdqwlnym6si5" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (10).png" id="46_d42vp"]
+[ext_resource type="Texture2D" uid="uid://pmpc4xh4trdm" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (11).png" id="47_r7ccf"]
+[ext_resource type="Texture2D" uid="uid://bdt2geaywfwh2" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (12).png" id="48_cuctp"]
+[ext_resource type="Texture2D" uid="uid://vfm7wciqhnbh" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (13).png" id="49_1ft4f"]
+[ext_resource type="Texture2D" uid="uid://cmcmv0mktuuul" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (14).png" id="50_f56sa"]
+[ext_resource type="Texture2D" uid="uid://6kwcyv7pqldh" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (15).png" id="51_47trg"]
+[ext_resource type="Texture2D" uid="uid://d15mrk1ps7487" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (16).png" id="52_n3ffo"]
+[ext_resource type="Texture2D" uid="uid://fk1a24dujv0h" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (17).png" id="53_cwsmh"]
+[ext_resource type="Texture2D" uid="uid://283oc21ww5rn" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (18).png" id="54_8myuf"]
+[ext_resource type="Texture2D" uid="uid://dgbmcp3ki8d8m" path="res://Textures/Character_sprites/astronomer/astronomer_scientist/sprite_astroScientist (19).png" id="55_f4qah"]
+[ext_resource type="Texture2D" uid="uid://boiyk0uddmjf5" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (1).png" id="56_qyuie"]
+[ext_resource type="Texture2D" uid="uid://bqt30bab08lxa" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (2).png" id="57_0kd13"]
+[ext_resource type="Texture2D" uid="uid://dxucj4sld4pmp" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (3).png" id="58_66rut"]
+[ext_resource type="Texture2D" uid="uid://x57ikcrlrot" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (4).png" id="59_dfqk4"]
+[ext_resource type="Texture2D" uid="uid://dq17wvrj3y7g2" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (5).png" id="60_kpq8g"]
+[ext_resource type="Texture2D" uid="uid://dp77w81u2sqan" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (6).png" id="61_7xbxa"]
+[ext_resource type="Texture2D" uid="uid://c813ssn1jct5e" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (7).png" id="62_aljnt"]
+[ext_resource type="Texture2D" uid="uid://bbp5yg8prib24" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (8).png" id="63_lufyr"]
+[ext_resource type="Texture2D" uid="uid://b7r8ci60xh6vv" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (9).png" id="64_gdxfy"]
+[ext_resource type="Texture2D" uid="uid://cm7gn0wct4wk7" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (10).png" id="65_yywja"]
+[ext_resource type="Texture2D" uid="uid://ow8jaevnx4wg" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (11).png" id="66_ydwp7"]
+[ext_resource type="Texture2D" uid="uid://du7ftvlhu5umj" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (12).png" id="67_8ce6r"]
+[ext_resource type="Texture2D" uid="uid://duyhpcbfkmvux" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (13).png" id="68_qrcwy"]
+[ext_resource type="Texture2D" uid="uid://c3oqpiy1juww7" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (14).png" id="69_w3glm"]
+[ext_resource type="Texture2D" uid="uid://bnx2vub2fo6wr" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (15).png" id="70_rvo2v"]
+[ext_resource type="Texture2D" uid="uid://b75b44oaqdh3j" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (16).png" id="71_gx8jj"]
+[ext_resource type="Texture2D" uid="uid://baouriukwf452" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (17).png" id="72_aa2g7"]
+[ext_resource type="Texture2D" uid="uid://bftkvcm0naqms" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (18).png" id="73_jilkq"]
+[ext_resource type="Texture2D" uid="uid://do6kwic7b0e6n" path="res://Textures/Character_sprites/astronomer/astronomer_thawb/sprite_astroThawb (19).png" id="74_rseax"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73dat"]
 animations = [{
@@ -67,7 +125,196 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_aebhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kwxgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2ltus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_s14of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fu3fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hcj61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_op2k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ytu7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0kq6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_nsbj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_e1oeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_psvus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hxmih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gf72a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8ilne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p1kug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0tpj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_s2cbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_mn8kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_wcyxg")
+}],
+"loop": true,
+"name": &"merchant_dress",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_iqrm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dwjdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_moncm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_r4n2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2oabh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_oabfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_v7gwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8r52j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_k7n8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_d42vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_r7ccf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_cuctp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_1ft4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_f56sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_47trg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_n3ffo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_cwsmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_8myuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_f4qah")
+}],
+"loop": true,
+"name": &"scientis",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_qyuie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0kd13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_66rut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_dfqk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_kpq8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7xbxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_aljnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_lufyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_gdxfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_yywja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ydwp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_8ce6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_qrcwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_w3glm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_rvo2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_gx8jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_aa2g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_jilkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_rseax")
+}],
+"loop": true,
+"name": &"thawb",
+"speed": 7.0
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wx7hr"]
@@ -84,7 +331,8 @@ billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_73dat")
 autoplay = "default"
-frame_progress = 0.109534055
+frame = 13
+frame_progress = 0.17201424
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)

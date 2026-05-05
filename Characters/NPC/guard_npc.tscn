@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mex6w"]
-size = Vector3(10.880586, 10.502563, 10.316781)
+size = Vector3(20.387627, 10.502563, 10.316781)
 
 [node name="guard_npc" type="StaticBody3D"]
 script = ExtResource("1_3pxal")
@@ -51,7 +51,7 @@ autoplay = "default"
 frame_progress = 0.33697784
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11649084, 5.2442255, 0.08583069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8116977, 5.2442255, 0.08583069)
 shape = SubResource("BoxShape3D_mex6w")
 
 [node name="Label3D" type="Label3D" parent="."]
