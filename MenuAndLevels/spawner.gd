@@ -1,12 +1,14 @@
 class_name spawner extends Marker3D
 
+@export var max := 5
+
 @export var spawn_mob: PackedScene = preload(Constants.GET_CHARACTER.monster_thing)
 const spawn_rad := 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.johny_is_dead.connect(johny_pls_respawn)
-	for i in 5:
+	for i in max:
 		spawn_()
 		
 

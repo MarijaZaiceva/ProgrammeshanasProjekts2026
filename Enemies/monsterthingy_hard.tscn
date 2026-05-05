@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://ballinyackqm5"]
+
+[ext_resource type="Script" uid="uid://blioh8afsiwks" path="res://Enemies/monster_thing.gd" id="1_cjwj6"]
+[ext_resource type="Script" uid="uid://q7p7n0ix62rv" path="res://Enemies/health_bar.gd" id="2_04f0x"]
+[ext_resource type="Texture2D" uid="uid://d2yc0g0ggy7ai" path="res://Textures/bugorok.png" id="3_7fhf2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tbmyb"]
+size = Vector3(4.125122, 5.2231445, 3.211914)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idgg8"]
+atlas = ExtResource("3_7fhf2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7opx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idgg8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Monsterthingy_hard" type="CharacterBody3D"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+script = ExtResource("1_cjwj6")
+chase_speed = 8
+attack_speed = 40
+strength = [8, 16]
+metadata/_custom_type_script = "uid://blioh8afsiwks"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20595288, 2.1115723, -0.014888763)
+shape = SubResource("BoxShape3D_tbmyb")
+
+[node name="HealthBar" type="Label3D" parent="."]
+script = ExtResource("2_04f0x")
+health = 60.0
+dealt_damage = 10.0
+respawn_in = 30.0
+metadata/_custom_type_script = "uid://q7p7n0ix62rv"
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.19690895, 0.6811118, -0.049586296)
+layers = 3
+cast_shadow = 0
+modulate = Color(0.6956395, 0.24376363, 0.29191217, 1)
+billboard = 1
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7opx5")

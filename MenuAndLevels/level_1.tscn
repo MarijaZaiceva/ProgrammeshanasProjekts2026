@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=4 uid="uid://dc33ark5cdfo0"]
+[gd_scene load_steps=199 format=4 uid="uid://dc33ark5cdfo0"]
 
 [ext_resource type="PackedScene" uid="uid://b5uhtmtt532gk" path="res://Characters/player.tscn" id="1_t8jui"]
 [ext_resource type="MeshLibrary" uid="uid://cltf35ci4pmqa" path="res://possibleMeshLib/meshlib14.tres" id="3_324lf"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d0y0oa5o5ms6q" path="res://Characters/NPC/astronom_npc.tscn" id="15_4tgpa"]
 [ext_resource type="PackedScene" uid="uid://bynq6dbru257d" path="res://Characters/NPC/merchant_npc.tscn" id="15_sahug"]
 [ext_resource type="PackedScene" uid="uid://d2o7pump7psm0" path="res://Characters/NPC/guard_npc.tscn" id="17_sahug"]
+[ext_resource type="PackedScene" uid="uid://ballinyackqm5" path="res://Enemies/monsterthingy_hard.tscn" id="18_1c6f8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mqph"]
 transparency = 1
@@ -2791,10 +2792,6 @@ shape = SubResource("ConvexPolygonShape3D_324lf")
 
 [node name="UserInterface" parent="." instance=ExtResource("3_t8jui")]
 
-[node name="Spawner" type="Marker3D" parent="."]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -28.396, 0.638, 200)
-script = ExtResource("4_t8jui")
-
 [node name="Borders" type="Node" parent="."]
 script = ExtResource("5_t3yaw")
 
@@ -4060,3 +4057,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225.64305, 1.4992485, 350.74
 
 [node name="guard_npc" parent="NPCs" instance=ExtResource("17_sahug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -240.36972, 6.1648045, 282.01108)
+
+[node name="Spawners" type="Node" parent="."]
+
+[node name="spawnerEasy" type="Marker3D" parent="Spawners"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -492.22177, 0.638, 208.49103)
+script = ExtResource("4_t8jui")
+
+[node name="spawnerHard" type="Marker3D" parent="Spawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512.63745, 0, 498.4821)
+script = ExtResource("4_t8jui")
+spawn_mob = ExtResource("18_1c6f8")
+metadata/_custom_type_script = "uid://c8b0fl1t52xgq"
+
+[node name="spawnerEasy2" type="Marker3D" parent="Spawners"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -136.3013, 0.638, 354.24594)
+script = ExtResource("4_t8jui")

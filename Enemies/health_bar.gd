@@ -1,14 +1,15 @@
-extends Label3D
+class_name HealthMonster extends Label3D
 
 const hitbox_radius:= 15
 var dad: Node = null
 var player: Node = null
-var health :float = 12
+@export var health :float = 12
 var max_health :float
-var dealt_damage :float = 5
+@export var dealt_damage :float = 5
 var am :float = 0
 var drop_it: PackedScene = preload(Constants.GET_CHARACTER.item)
-const respawn_in := -5.0
+@export var respawn_in := 10.0
+@export var max_money := 2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -40,7 +41,7 @@ func get_health_bar()-> String:
 	return line
 	
 func die():
-	var rand = randf_range(1,2)
+	var rand = randf_range(1,max_money)
 	for x in rand:
 		var new_item = drop_it.instantiate()
 		new_item.global_position = dad.global_position	
