@@ -13,9 +13,11 @@ visible = false
 [node name="astronom_npc" parent="." instance=ExtResource("2_0bb6t")]
 visible = false
 character_name = "Astronom"
+dialID = 3
 
 [node name="guard_npc" parent="." instance=ExtResource("3_3dakv")]
 visible = false
 
 [node name="merchant_npc" parent="." instance=ExtResource("4_orps6")]
 visible = false
+dialID = 10

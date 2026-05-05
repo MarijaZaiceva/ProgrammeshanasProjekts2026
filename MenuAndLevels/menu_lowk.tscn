@@ -10,10 +10,10 @@ script = ExtResource("1_7fpo1")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 z_index = 4
-offset_left = 474.0
-offset_top = 203.0
-offset_right = 730.0
-offset_bottom = 459.0
+offset_left = 456.0
+offset_top = 189.0
+offset_right = 712.0
+offset_bottom = 445.0
 pivot_offset = Vector2(130, 131)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -93,8 +93,8 @@ region_rect = Rect2(0, 0, 250, 250)
 
 [node name="TextureRect" type="Sprite2D" parent="TextureRect/TextureRect4/TextureRect/TextureRect"]
 texture_repeat = 2
-position = Vector2(-6.447418, 254.14491)
-scale = Vector2(1.0419999, 0.99742377)
+position = Vector2(-1.3578548, 248.2043)
+scale = Vector2(1.0419999, 1.04916)
 texture = ExtResource("4_vwc8b")
 region_enabled = true
 region_rect = Rect2(0, 0, 250, 250)
@@ -156,12 +156,21 @@ region_enabled = true
 region_rect = Rect2(0, 0, 250, 250)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 485.0
-offset_top = 412.0
-offset_right = 746.0
-offset_bottom = 532.0
+offset_left = 469.0
+offset_top = 409.0
+offset_right = 730.0
+offset_bottom = 529.0
 theme_override_fonts/font = ExtResource("4_d8ix3")
 theme_override_font_sizes/font_size = 100
 text = "Level 1^"
 
+[node name="Button" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 27.0
+offset_right = 270.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 25
+text = "additional content"
+
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

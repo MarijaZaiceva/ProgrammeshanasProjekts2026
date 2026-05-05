@@ -6,6 +6,7 @@ const GET_SCENE: Dictionary = {
 	"menu":"uid://5r7nnlj7v5he",
 	"level1":"uid://dc33ark5cdfo0",
 	"loadingScreen":"uid://vmmebihfthpj",
+	"secret":"uid://bfhau1ju0knqd"
 }
 
 const GET_CHARACTER: Dictionary = {

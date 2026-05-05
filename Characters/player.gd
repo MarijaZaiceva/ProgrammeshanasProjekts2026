@@ -19,6 +19,7 @@ func _ready() -> void:
 	
 	ap = $MeshInstance3D/Sprite3D
 	set_physics_process(true)
+	DialoguePlayer.start_talking_(1)
 	
 	
 

@@ -4080,9 +4080,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349.22348, 0, 359.92197)
 
 [node name="astronom_npc" parent="NPCs" instance=ExtResource("15_4tgpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225.64305, 1.4992485, 350.74)
+dialID = 3
 
 [node name="guard_npc" parent="NPCs" instance=ExtResource("17_sahug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.25826, 6.1648045, 282.01108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -232.05074, 6.1648045, 282.01108)
 
 [node name="Spawners" type="Node" parent="."]
 
