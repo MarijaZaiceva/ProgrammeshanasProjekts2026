@@ -5,3 +5,7 @@ const level_path = Constants.GET_SCENE.level1
 
 func _on_texture_button_button_down() -> void:
 	SceneLoader.load_scene(level_path)
+
+
+func _on_button_button_down() -> void:
+	pass # Replace with function body.

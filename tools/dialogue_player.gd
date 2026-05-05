@@ -108,7 +108,7 @@ func httpDial_request_completed(results, response_code, headers, body):
 	var json = JSON.parse_string(json_string) #extracting json
 	print (json)
 	if json.has('details'): push_error('dialogue doesn\'t exist')
-	if json["checkAcces"]: print("check acess"+str(json["altDial"])) #replace later
+	#if json["checkAcces"]: print("check acess"+str(json["altDial"])) #replace later
 	firstline = json["firstLine"]
 	print(firstline)
 	got_dd.emit()
@@ -136,6 +136,7 @@ func httpLine_request_completed(results, response_code, headers, body):
 	if json["choiceID"]!=null:
 		get_options(json["choiceID"])
 		await got_options
+		print("recieved signal")
 		if user_offline: push_error('offline!')
 	
 	if line == firstline : collecting_data = false
@@ -166,14 +167,19 @@ func httpChoice_request_completed(results, response_code, headers, body):
 	if results > 0: #offline
 		user_offline = true
 		collecting_data = false
-		got_options.emit()
+		push_error('error')
 		return
 	var json_string = body.get_string_from_utf8()
 	var json = JSON.parse_string(json_string) #extracting json
 	print (json)
 	if json.has('detail'): push_error('choice doesn\'t exist')
-	line = json["nextLine"]
-	options = [json["cru"],json["opt1"],json["opt2"],json["opt3"]]
+	if not (json.has("cru") and json.has("opt1") and json.has("opt2") and json.has("opt3")):
+		push_error("Missing expected fields")
+		return
+
+	options = [json["cru"], json["opt1"], json["opt2"], json["opt3"]]
+	print(options)
+
 	got_options.emit()
 
 
