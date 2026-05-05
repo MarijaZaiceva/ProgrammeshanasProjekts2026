@@ -25,6 +25,8 @@ var healthbar : Node = null
 var planning_to:Vector3
 var cooldown:=false
 
+var spawnerId:int
+
 
 func _ready():
 	spawn_position = global_position

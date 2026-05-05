@@ -21,6 +21,7 @@ func _on_get_damaged_bozo(damageRange:Array)->void:
 	if dead:
 		return
 	var damage := randi_range(damageRange[0],damageRange[1])
+	dad.damaged = true
 	
 	health -= damage
 	if health >0:

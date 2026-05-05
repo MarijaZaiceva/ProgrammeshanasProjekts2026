@@ -109,9 +109,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_5wbyn")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -188,7 +188,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_8sfs3")
 }],
-"loop": true,
+"loop": false,
 "name": &"get_hit",
 "speed": 12.0
 }, {
@@ -337,10 +337,8 @@ pixel_size = 0.1
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_eovys")
-animation = &"jump"
+animation = &"get_hit"
 autoplay = "default"
-frame = 6
-frame_progress = 0.50041187
 
 [node name="Camera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2750163, 0)

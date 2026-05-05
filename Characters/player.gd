@@ -5,10 +5,12 @@ const JUMP_VELOCITY = 15
 var ap:Node = null
 var hb:Node = null
 
-enum Action {STILL, MOVE, JUMP}
+enum Action {STILL, MOVE, JUMP, DAMAGED, ATTACKING}
 var last_action = Action.STILL
 var new_action
 
+var damaged = false
+var attacking = false
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -24,8 +26,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.s
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2.5
-	else:
-		new_action = Action.JUMP
 	
 	if is_on_floor():
 		new_action=Action.STILL
@@ -48,14 +48,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	if new_action!=last_action: change_animation(new_action)
-	last_action = new_action
+		
+	if attacking: new_action = Action.ATTACKING
+	if damaged: new_action = Action.DAMAGED
+	
+	
 	if Input.is_action_pressed("left"):
 		ap.flip_h = true
 	if Input.is_action_pressed("right"):
 		ap.flip_h = false
 	move_and_slide()
-		
+	if Input.is_action_just_pressed("attack"):
+		attacking = true
+		new_action = Action.ATTACKING
+	
+	if new_action!=last_action: change_animation(new_action)
+	last_action = new_action
+	
+	if not ap.is_playing():
+		damaged = false
+		attacking = false	
 	
 func change_animation(n_a)->void:
 	match n_a:
@@ -65,3 +77,8 @@ func change_animation(n_a)->void:
 			ap.play("jump")
 		Action.MOVE:
 			ap.play("walk")
+		Action.DAMAGED:
+			ap.play("get_hit")
+			if is_on_floor(): velocity.y = JUMP_VELOCITY
+		Action.ATTACKING:
+			ap.play("attack")

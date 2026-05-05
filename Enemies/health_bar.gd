@@ -10,6 +10,8 @@ var am :float = 0
 var drop_it: PackedScene = preload(Constants.GET_CHARACTER.item)
 @export var respawn_in := 10.0
 @export var max_money := 2
+var spawnerId:int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -46,6 +48,6 @@ func die():
 		var new_item = drop_it.instantiate()
 		new_item.global_position = dad.global_position	
 		get_tree().get_first_node_in_group("Level").add_child.call_deferred(new_item)
-	SignalBus.johny_is_dead.emit(respawn_in)
+	SignalBus.johny_is_dead.emit(respawn_in, dad.spawnerId)
 	dad.queue_free()
 		

@@ -1,6 +1,7 @@
 class_name spawner extends Marker3D
 
 @export var max := 5
+@export var spawnerId:=1
 
 @export var spawn_mob: PackedScene = preload(Constants.GET_CHARACTER.monster_thing)
 const spawn_rad := 15
@@ -22,8 +23,12 @@ func spawn_() -> void:
 
 	var new_mob = spawn_mob.instantiate()	
 	new_mob.position = global_position + Vector3(cos(angle), 0.0 ,sin(angle)) * spawn_rad
+	new_mob.spawnerId = spawnerId
 	get_parent().add_child.call_deferred(new_mob)
 
-func johny_pls_respawn(time: float) ->void:
+func johny_pls_respawn(time: float, sid:int) ->void:
+	if sid != spawnerId: 
+		return
+	print("equal")
 	await get_tree().create_timer(time).timeout
 	spawn_()

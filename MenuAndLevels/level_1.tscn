@@ -64,7 +64,7 @@ size = Vector3(2.493988, 1, 2.0904388)
 size = Vector3(5.774414, 10.24585, 48.648926)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypdf7"]
-size = Vector3(43.22998, 5.8120117, 30.05127)
+size = Vector3(33.303345, 5.8120117, 24.571533)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ypdf7"]
 points = PackedVector3Array(24.71, 3.746, 22.133, 24.71, 2.222, 14.76, 15.873, 2.222, 14.76, 7.766, 6.273, 6.363, 15.798, 2.065, -0.559, -8.697, 2.065, -0.559, -15.962, 6.13, 6.086, -15.962, 6.13, 25.216, -15.962, 1.836, 25.216, 23.572, 5.618, 25.216, 23.572, 1.836, 25.216, 8.105, 2.624, 24.12)
@@ -2806,13 +2806,14 @@ shape = SubResource("BoxShape3D_1c6f8")
 transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -239.79034, 0, 264.72604)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.567627, 2.4060059, 14.525635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.530945, 2.4060059, 17.265503)
 shape = SubResource("BoxShape3D_ypdf7")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Environment/NavigationRegion3D"]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -239.79037, 0, 264.7261)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/NavigationRegion3D/StaticBody3D2"]
+transform = Transform3D(0.96564066, 0, -0.259881, 0, 1, 0, 0.259881, 0, 0.96564066, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ypdf7")
 
 [node name="UserInterface" parent="." instance=ExtResource("3_t8jui")]
@@ -4089,13 +4090,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.25826, 6.1648045, 282.01
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -492.22177, 0.638, 208.49103)
 script = ExtResource("4_t8jui")
 
+[node name="spawnerEasy2" type="Marker3D" parent="Spawners"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -136.3013, 0.638, 354.24594)
+script = ExtResource("4_t8jui")
+spawnerId = 2
+
 [node name="spawnerHard" type="Marker3D" parent="Spawners"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -512.63745, 0, 498.4821)
 script = ExtResource("4_t8jui")
 max = 2
+spawnerId = 3
 spawn_mob = ExtResource("18_1c6f8")
 metadata/_custom_type_script = "uid://c8b0fl1t52xgq"
-
-[node name="spawnerEasy2" type="Marker3D" parent="Spawners"]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -136.3013, 0.638, 354.24594)
-script = ExtResource("4_t8jui")
